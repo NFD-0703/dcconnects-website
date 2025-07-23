@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DC Connects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      transition: background-color 0.3s ease;
+    }
+
+    header:hover {
+      background-color: #fff;
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-left: -20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 20px;
+    }
+
+    nav ul li.dropdown > a {
+      position: relative;
+      padding-right: 18px;
+      display: inline-block;
+    }
+
+    nav ul li.dropdown > a::after {
+      content: '>';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      transition: transform 0.3s ease;
+      font-size: 20px;
+    }
+
+    nav ul li.dropdown:hover > a::after {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    nav ul li.dropdown > a::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #0075c9;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li.dropdown:hover > a::before {
+      width: 100%;
+    }
+
+    nav ul li > a {
+      position: relative;
+      text-decoration: none;
+    }
+
+    nav ul li > a::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #0075c9;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li:hover > a::before {
+      width: 100%;
+    }
+
+    #banner {
+      position: relative;
+      width: 100%;
+      height: 760px;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .banner-inner {
+      position: relative;
+      max-width: 1440px;
+      height: 760px;
+      margin: 0 auto;
+    }
+
+    #banner img {
+      z-index: 2;
+      height: 760px;
+      width: 1440px;
+      display: block;
+      margin: auto;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 25%;
+      right: 20%;
+      transform: translateY(-50%);
+      color: #fff;
+      text-align: right;
+      z-index: 3;
+    }
+
+    .hero-text h1 {
+      font-size: 38px;
+      font-weight: 600;
+    }
+
+    .hero-text a {
+      color: #fff;
+      background-color: #0075c9;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-top: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      padding-right: 32px;
+    }
+
+    .hero-text a::after {
+      content: '>';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-text a:hover {
+      background-color: #004b8a;
+      transform: translateX(5px);
+    }
+
+    .hero-text a:hover::after {
+      transform: translateY(-50%) translateX(10px);
+    }
+
+    .content {
+      padding: 40px 0;
+      width: 100%;
+      max-width: clamp(320px, 100vw - 40px, 900px);
+      margin-left: calc((100% - 1440px) / 2 + 20px);
+      margin-right: auto;
+    }
+
+    .content h2 {
+      font-size: 35px;
+      color: #001a3d;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .content h2 span {
+      color: #0075c9;
+    }
+
+    .content p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    header:hover nav ul li a {
+      color: #000;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 36px;
+      color: white;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    @media screen and (max-width: 958px) {
+      header {
+        background-color: #fff;
+        position: relative;
+      }
+      .hamburger {
+        display: block;
+        color: #000;
+      }
+
+      nav {
+        display: none;
+        position: relative;
+        width: 100%;
+        background: #fff;
+        padding: 0;
+        z-index: 99;
+        color: #000;
+      }
+
+      body.menu-open nav {
+        display: block;
+        padding: 20px 20px;
+        text-align: right;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      nav ul li .submenu {
+        position: relative;
+        display: none;
+        background: #fff;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 8px;
+        flex-direction: column;
+        text-align: right;
+        width: 100%;
+      }
+
+      nav ul li.open .submenu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav ul li:not(.open) .submenu {
+        display: none !important;
+      }
+
+      nav ul li .submenu a {
+        padding: 10px 0;
+        padding-right: 10px;
+        display: block;
+        color: #000;
+      }
+
+      nav ul li a {
+        color: #000;
+      }
+
+      /* Arrow default (pointing down) */
+      nav ul li.dropdown > a::after {
+        transform: translateY(-50%) rotate(90deg);
+      }
+
+      /* Underline default (none) */
+      nav ul li > a::before {
+        width: 0;
+      }
+
+      /* Arrow up when open */
+      nav ul li.open > a::after {
+        transform: translateY(-50%) rotate(-90deg);
+      }
+
+      /* Underline when open - only if <li> and <a> both have open */
+      nav ul li.open > a.open::before {
+        width: 100%;
+      }
+
+      nav ul li .submenu a::before,
+      nav ul li .submenu a::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      /* nav ul li .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: flex;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        padding: 14px 20px;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        pointer-events: none;
+        z-index: 999;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        width: 240px;    
+      } */
+
+      #banner {
+        height: auto;
+      }
+
+      .banner-inner {
+        position: relative;
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+      }
+
+      #banner img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .hero-text {
+        position: absolute;
+        top: 30%;
+        right: 5%;
+        transform: translateY(-50%);
+        text-align: right;
+        color: #fff;
+        z-index: 3;
+        padding: 10px 15px;
+        border-radius: 8px;
+      }
+
+      .hero-text h1 {
+        font-size: 20px;
+      }
+
+      .hero-text a {
+        font-size: 14px;
+      }
+      
+      .content h2 {
+        font-size: 24px;
+      }
+
+      .content p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+    }
+
+    /* Dropdown hover underline animation and arrow rotation */
+    /* (already included above) */
+
+    /* Dropdown submenu styles - Glassmorphism effect & smooth animation */
+    nav ul li .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: flex;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 14px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
+      z-index: 999;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      min-width: 240px;
+    }
+
+    nav ul li:hover .submenu {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    nav ul li .submenu a {
+      color: #000;
+      font-size: 18px;
+      text-decoration: none;
+      padding: 12px 16px;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    nav ul li .submenu a:hover {
+      color: #0075c9;
+    }
+
+    @media screen and (max-width: 1440px) {
+      .content {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      #banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(16px) brightness(0.9);
+        transform: scale(1.05);
+        z-index: 1;
+        opacity: 0.6;
+      }
+
+      #banner img {
+        z-index: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="images/Company CI/DCC CI Full_Main Color.png" alt="DC Connects Logo" />
+      </div>
+      <button class="hamburger" onclick="document.body.classList.toggle('menu-open')">
+        ☰
+      </button>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li class="dropdown">
+        <a href="#">About Us</a>
+        <ul class="submenu">
+          <li><a href="#">About Company</a></li>
+          <li><a href="#">The Investor</a></li>
+          <li><a href="#">Affiliate</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Built for AI</a></li>
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <ul class="submenu">
+          <li><a href="#">Colocation</a></li>
+          <li><a href="#">Build to Suit</a></li>
+          <li><a href="#">Support Services</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Data Centers</a>
+        <ul class="submenu">
+          <li><a href="#">Korea</a></li>
+          <li><a href="#">Taiwan</a></li>
+          <li><a href="#">Japan</a></li>
+        </ul>
+      </li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="banner">
+    <div class="banner-inner">
+      <img src="images/BG Image/BG Image_01 Soul 01_cropped@2x.png" alt="Banner" />
+      <div class="hero-text">
+        <h1>Soul 01</h1>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <h2>WHERE <span>YOUR CONNECTIONS BEGIN</span></h2>
+    <p>
+      We serve cloud and AI services, enterprises, and government agencies through our secure, reliable, and certified data center facilities.
+    </p>
+    <p>
+      As a preferred provider of highly secure and reliable data center solutions in the Asia-Pacific region, we envision a future where we safeguard and power the digital world through a network of connected, energy- and water-efficient data centers.
+    </p>
+  </section>
+
+</body>
+<script>
+  // Move nav inside .header-inner on desktop, outside on mobile
+  function adjustNavPosition() {
+    const headerInner = document.querySelector('.header-inner');
+    const nav = document.querySelector('nav');
+    if (!headerInner || !nav) return;
+    if (window.innerWidth > 958) {
+      if (!headerInner.contains(nav)) {
+        headerInner.appendChild(nav);
+      }
+    } else {
+      if (headerInner.contains(nav)) {
+        headerInner.parentNode.parentNode.insertBefore(nav, headerInner.parentNode.nextSibling);
+      }
+    }
+  }
+
+  function enableMobileDropdown() {
+    const allMenuLinks = document.querySelectorAll('nav ul li > a');
+    allMenuLinks.forEach(link => {
+      link.onclick = (e) => {
+        if (window.innerWidth <= 958) {
+          const parent = link.parentElement;
+          const isDropdown = parent.classList.contains('dropdown');
+          const isOpen = parent.classList.contains('open');
+
+          // Prevent default only for dropdowns
+          if (isDropdown) {
+            e.preventDefault();
+          }
+
+          // Reset all menu states
+          document.querySelectorAll('nav ul li').forEach(item => {
+            item.classList.remove('open');
+            const aTag = item.querySelector('a');
+            if (aTag) {
+              aTag.classList.remove('open');
+            }
+          });
+
+          // Toggle dropdown only if it's a dropdown and was not already open
+          if (isDropdown && !isOpen) {
+            parent.classList.add('open');
+            link.classList.add('open');
+          } else if (!isDropdown) {
+            // Close mobile menu if non-dropdown clicked
+            document.body.classList.remove('menu-open');
+          }
+        }
+      };
+    });
+  }
+
+  window.addEventListener('load', () => {
+    enableMobileDropdown();
+    adjustNavPosition();
+  });
+
+  window.addEventListener('resize', () => {
+    enableMobileDropdown();
+    adjustNavPosition();
+  });
+</script>
+</html>
