@@ -6,6 +6,7 @@
   <title>DC Connects</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
+    /* Base styles and layout logic for all pages */
     * {
       margin: 0;
       padding: 0;
@@ -42,7 +43,7 @@
     }
 
     .logo img {
-      height: 50px;
+      height: 55px;
       margin-left: -20px;
     }
 
@@ -60,7 +61,7 @@
       color: #fff;
       text-decoration: none;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 1.25rem;
     }
 
     nav ul li.dropdown > a {
@@ -76,10 +77,9 @@
       top: 50%;
       transform: translateY(-50%) rotate(90deg);
       transition: transform 0.3s ease;
-      font-size: 20px;
+      font-size: 1.25rem;
     }
-
-    nav ul li.dropdown:hover > a::after {
+    nav ul li.open > a::after {
       transform: translateY(-50%) rotate(-90deg);
     }
 
@@ -145,7 +145,7 @@
     .hero-text {
       position: absolute;
       top: 25%;
-      right: 20%;
+      right: 10%;
       transform: translateY(-50%);
       color: #fff;
       text-align: right;
@@ -153,7 +153,7 @@
     }
 
     .hero-text h1 {
-      font-size: 38px;
+      font-size: 2.375rem;
       font-weight: 600;
     }
 
@@ -163,7 +163,7 @@
       padding: 8px 16px;
       border-radius: 4px;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 1.125rem;
       margin-top: 10px;
       display: inline-block;
       transition: background-color 0.3s ease, transform 0.3s ease;
@@ -199,7 +199,7 @@
     }
 
     .content h2 {
-      font-size: 35px;
+      font-size: 2.1875rem;
       color: #001a3d;
       margin-bottom: 20px;
       font-weight: 700;
@@ -209,8 +209,15 @@
       color: #0075c9;
     }
 
+    .gradient-text {
+      background: linear-gradient(to right, #000000 2%, #0075c9 98%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
     .content p {
-      font-size: 20px;
+      font-size: 1.25rem;
       line-height: 1.8;
       color: #555;
       margin-bottom: 20px;
@@ -230,6 +237,7 @@
       z-index: 20;
     }
 
+    /* Mobile styles */
     @media screen and (max-width: 958px) {
       header {
         background-color: #fff;
@@ -244,8 +252,8 @@
         display: none;
         position: relative;
         width: 100%;
-        background: #fff;
-        padding: 0;
+        background: linear-gradient(to bottom, #f5f7fa 0%, #e0e5ec 100%);
+        padding-right: 2px;
         z-index: 99;
         color: #000;
       }
@@ -292,10 +300,11 @@
       nav ul li a {
         color: #000;
       }
-
+      
       /* Arrow default (pointing down) */
       nav ul li.dropdown > a::after {
         transform: translateY(-50%) rotate(90deg);
+        transition: transform 0.3s ease;
       }
 
       /* Underline default (none) */
@@ -319,24 +328,13 @@
         content: none !important;
       }
 
-      /* nav ul li .submenu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: flex;
-        gap: 12px;
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(12px);
-        padding: 14px 20px;
-        border-radius: 10px;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.4s ease, transform 0.4s ease;
-        pointer-events: none;
-        z-index: 999;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        width: 240px;    
-      } */
+      /* Explicitly disable underline (blue bar) animation for links in mobile view */
+      nav ul li > a::before,
+      nav ul li.open > a.open::before,
+      nav ul li a:hover::before {
+        display: none !important;
+        content: none !important;
+      }
 
       #banner {
         height: auto;
@@ -357,40 +355,33 @@
       }
 
       .hero-text {
-        position: absolute;
-        top: 30%;
-        right: 5%;
-        transform: translateY(-50%);
-        text-align: right;
-        color: #fff;
-        z-index: 3;
+        width: 90%;
+        max-width: 380px;
         padding: 10px 15px;
-        border-radius: 8px;
+        right: 5%;
+        top: 15%;
+        transform: translateY(-50%);
       }
 
       .hero-text h1 {
-        font-size: 20px;
+        font-size: 5vw; /* 화면 너비에 비례하도록 */
       }
 
       .hero-text a {
-        font-size: 14px;
+        font-size: 2.5vw;
       }
       
       .content h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
       }
 
       .content p {
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 1.6;
       }
-
     }
 
-    /* Dropdown hover underline animation and arrow rotation */
-    /* (already included above) */
-
-    /* Dropdown submenu styles - Glassmorphism effect & smooth animation */
+    /* Dropdown submenu styles - Glassmorphism effect & smooth animation for desktop */
     nav ul li .submenu {
       position: absolute;
       top: 100%;
@@ -410,7 +401,7 @@
       min-width: 240px;
     }
 
-    nav ul li:hover .submenu {
+    nav ul li.open .submenu {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
@@ -418,7 +409,7 @@
 
     nav ul li .submenu a {
       color: #000;
-      font-size: 18px;
+      font-size: 1.125rem;
       text-decoration: none;
       padding: 12px 16px;
       transition: color 0.2s ease;
@@ -452,6 +443,18 @@
 
       #banner img {
         z-index: 2;
+      }
+    }
+
+    /* Show submenu on hover for desktop (width >= 959px) */
+    @media screen and (min-width: 958px) {
+      nav ul li:hover .submenu {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      nav ul li:hover > a::after {
+        transform: translateY(-50%) rotate(-90deg);
       }
     }
   </style>
@@ -511,7 +514,7 @@
   </section>
 
   <section class="content">
-    <h2>WHERE <span>YOUR CONNECTIONS BEGIN</span></h2>
+    <h2><span class="gradient-text">WHERE YOUR CONNECTIONS BEGIN</span></h2>
     <p>
       We serve cloud and AI services, enterprises, and government agencies through our secure, reliable, and certified data center facilities.
     </p>
@@ -522,6 +525,10 @@
 
 </body>
 <script>
+  /* Base scripts and layout logic for all pages */
+  let resizeTimeout;
+  let mobileDropdownInitialized = false;
+
   // Move nav inside .header-inner on desktop, outside on mobile
   function adjustNavPosition() {
     const headerInner = document.querySelector('.header-inner');
@@ -539,49 +546,68 @@
   }
 
   function enableMobileDropdown() {
+    if (window.innerWidth > 958) {
+      // Remove any existing onclick handlers to avoid conflicts on desktop
+      document.querySelectorAll('nav ul li > a').forEach(link => {
+        link.onclick = null;
+        link.classList.remove('open');
+        if (link.parentElement) {
+          link.parentElement.classList.remove('open');
+        }
+      });
+      mobileDropdownInitialized = false;
+      return;
+    }
+
+    if (mobileDropdownInitialized) return; // Prevent re-initialization
+
     const allMenuLinks = document.querySelectorAll('nav ul li > a');
     allMenuLinks.forEach(link => {
       link.onclick = (e) => {
-        if (window.innerWidth <= 958) {
-          const parent = link.parentElement;
-          const isDropdown = parent.classList.contains('dropdown');
-          const isOpen = parent.classList.contains('open');
+        const parent = link.parentElement;
+        const isDropdown = parent.classList.contains('dropdown');
+        const isOpen = parent.classList.contains('open');
 
-          // Prevent default only for dropdowns
-          if (isDropdown) {
-            e.preventDefault();
+        // Prevent default only for dropdowns
+        if (isDropdown) {
+          e.preventDefault();
+        }
+
+        // Reset all menu states
+        document.querySelectorAll('nav ul li').forEach(item => {
+          item.classList.remove('open');
+          const aTag = item.querySelector('a');
+          if (aTag) {
+            aTag.classList.remove('open');
           }
+        });
 
-          // Reset all menu states
-          document.querySelectorAll('nav ul li').forEach(item => {
-            item.classList.remove('open');
-            const aTag = item.querySelector('a');
-            if (aTag) {
-              aTag.classList.remove('open');
-            }
-          });
-
-          // Toggle dropdown only if it's a dropdown and was not already open
-          if (isDropdown && !isOpen) {
-            parent.classList.add('open');
-            link.classList.add('open');
-          } else if (!isDropdown) {
-            // Close mobile menu if non-dropdown clicked
-            document.body.classList.remove('menu-open');
-          }
+        // Toggle dropdown only if it's a dropdown and was not already open
+        if (isDropdown && !isOpen) {
+          parent.classList.add('open');
+          link.classList.add('open');
+        } else if (!isDropdown) {
+          // Close mobile menu if non-dropdown clicked
+          document.body.classList.remove('menu-open');
         }
       };
     });
+    mobileDropdownInitialized = true;
+  }
+
+  function onResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      adjustNavPosition();
+      enableMobileDropdown();
+    }, 150);
   }
 
   window.addEventListener('load', () => {
-    enableMobileDropdown();
     adjustNavPosition();
+    enableMobileDropdown();
   });
 
-  window.addEventListener('resize', () => {
-    enableMobileDropdown();
-    adjustNavPosition();
-  });
+  window.addEventListener('resize', onResize);
 </script>
 </html>
