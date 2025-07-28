@@ -199,7 +199,7 @@
     }
 
     .content h2 {
-      font-size: 2.5875rem;
+      font-size: 2.875rem;
       color: #001a3d;
       margin-bottom: 20px;
       font-weight: 700;
@@ -237,6 +237,222 @@
       z-index: 20;
     }
 
+    .core-beliefs {
+      max-width: 1440px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .core-beliefs h2 {
+      font-size: 2.875rem;
+      color: #001a3d;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .core-beliefs p {
+      font-size: 1.25rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .belief-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .belief-card {
+      background: #e2e8f0;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .belief-card img {
+      height: 68;
+      margin-bottom: 20px;
+    }
+
+    .belief-card h3 {
+      font-size: 1.775rem;
+      color: #001a3d;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .belief-card p {
+      font-size: 1.4rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+     .belief-intro p {
+        font-size: 1.4rem;
+        text-align: left;
+      }
+    
+  .solutions-section {
+    padding: 60px 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .solutions-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    color: #0075c9;
+    font-weight: 600;
+    font-size: 2.125rem;
+    margin-bottom: 10px;
+  }
+
+  .solutions-title {
+    font-size: 2.85rem;
+    font-weight: 530;
+    color: #0262cf;
+    margin-bottom: 20px;
+  }
+
+  .solutions-description {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .solution-cards {
+    max-width: 1440px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .solution-card {
+    padding: 30px 20px;
+    border-radius: 10px;
+    background: #f7fafd; /* changed to a lighter shade */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left; /* ensure text and content align left */
+  }
+
+  .solution-card img {
+    height: 64px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 0 20px 0;
+  }
+
+  .solution-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #001a3d;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .solution-card p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .investor-affiliate {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.investor-section {
+  background-image: url('images/BG Image/BG Image_0101 The Invester.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+.investor-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.investor-logo {
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.investor-text {
+  max-width: 60%;
+}
+
+.investor-text h2,
+.affiliate-text h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.investor-text p,
+.affiliate-text p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 80%;
+}
+
+.affiliate-section {
+  background: linear-gradient(to right, #d4e9f8 0%, #ffffff 100%);
+  padding: 80px 20px;
+}
+
+.affiliate-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.affiliate-text {
+  max-width: 60%;
+  color: #333;
+}
+
+.affiliate-logo {
+   max-width: 200px; /* 로고 크기 확장 */
+   width: 100%;
+   margin-right: auto;
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.learn-more img {
+  width: 24px;;
+  height: auto;
+}
     /* Mobile styles */
     @media screen and (max-width: 958px) {
       header {
@@ -375,10 +591,109 @@
         font-size: 1.5rem;
       }
 
+      .core-beliefs h2 {
+        font-size: 1.5rem;
+        text-align: left;
+      }
+
       .content p {
         font-size: 1rem;
         line-height: 1.6;
       }
+
+      .belief-intro p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .belief-card img {
+        height: 58px;
+      }  
+
+      .belief-card p {
+        padding-left: 1px;
+        padding-right: 1px;
+      }  
+
+      .belief-card h3 {
+        font-size: 1.475rem;
+        font-weight: 550;
+      }
+
+      .solutions-title {
+        font-size: 1.5rem;
+      }
+
+      .solutions-description {
+        font-size: 1rem;
+      }
+      
+      .solution-card h3 {
+        font-size: 1.25rem;
+      }
+      .solution-card p {
+        font-size: 0.95rem;
+      }
+      .solution-card img {
+        height: 52px;
+      }
+      .investor-content,
+      .affiliate-content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 24px;
+      }
+
+      .investor-logo {
+        align-self: left;
+        width: 300px;
+      }
+      .affiliate-logo {
+        align-self: left;
+        width: 100px;
+      }
+
+      .investor-text,
+      .affiliate-text {
+        max-width: 100%;
+      }
+
+      .investor-text h2,
+      .affiliate-text h2 {
+        font-size: 1.75rem;
+      }
+
+      .investor-text p,
+      .affiliate-text p {
+        font-size: 1.1rem;
+      }
+
+      .learn-more {
+        font-size: 1rem;
+      }
+
+      .learn-more img {
+        width: 18px;
+      }
+
+      footer {
+        padding: 40px 20px;
+      }
+
+      footer h3,
+      footer h4 {
+        font-size: 1rem;
+      }
+
+      footer p {
+        font-size: 0.9rem;
+      }
+
+      footer img {
+        height: 36px !important;
+      }
+
     }
 
     /* Dropdown submenu styles - Glassmorphism effect & smooth animation for desktop */
@@ -457,6 +772,8 @@
         transform: translateY(-50%) rotate(-90deg);
       }
     }
+
+    
   </style>
 </head>
 <body>
@@ -522,13 +839,154 @@
       As a preferred provider of highly secure and reliable data center solutions in the Asia-Pacific region, we envision a future where we safeguard and power the digital world through a network of connected, energy- and water-efficient data centers.
     </p>
   </section>
+  <section class="core-beliefs">
+    <div style="text-align: right;">
+      <h2><span class="gradient-text">OUR CORE BELIEFS</span></h2>
+    </div>
+    <div class="belief-intro">
+      <p>Four core principles drive our innovation to meet our customers’ evolving needs</p>
+    </div>
+    <div class="belief-grid">
+      <div class="belief-card">
+        <img src="images/Icons/Icon_01_Our_Core_Belief_01_Highlty Secure.svg" alt="Highly Secure" />
+        <h3>Highly Secure</h3>
+        <p>Layered security with fortified perimeter, access control, and 24/7 surveillance</p>
+      </div>
+      <div class="belief-card">
+        <img src="images/Icons/Icon_01 Our Core Belief_02 Sustainable.svg" alt="Sustainable" />
+        <h3>Sustainable</h3>
+        <p>Sustainable, high-tech energy efficient data centers</p>
+      </div>
+      <div class="belief-card">
+        <img src="images/Icons/Icon_01 Our Core Belief_03 Scalable.svg" alt="Scalable" />
+        <h3>Scalable</h3>
+        <p>Flexible to adapt to market shifts and evolving business needs</p>
+      </div>
+      <div class="belief-card">
+        <img src="images/Icons/Icon_01 Our Core Belief_04 Reliable.svg" alt="Reliable" />
+        <h3>Reliable</h3>
+        <p>Reliable operational excellence with consistent global standards</p>
+      </div>
+    </div>
+  </section>
 
+  <section class="solutions-section">
+    <div class="solutions-inner">
+      <p class="section-label">OUR SOLUTIONS</p>
+      <h2 class="solutions-title">Unleash your data, achieve your digital vision</h2>
+      <p class="solutions-description">
+        We provide comprehensive data center solutions that empower your business to adapt to change and scale with growing demands.
+      </p>
+    </div>
+  </section>
+
+  <section class="solution-cards">
+    <div class="solution-grid">
+      <div class="solution-card">
+        <img src="images/Icons/Icon_02 Our Solution_01 Built for AI.png" alt="Built for AI" />
+        <h3>Built for AI</h3>
+        <p>Future-proof your AI with optimized, energy-efficient infrastructure</p>
+      </div>
+      <div class="solution-card">
+        <img src="images/Icons/Icon_02 Our Solution_02 Colocation.svg" alt="Colocation" />
+        <h3>Colocation</h3>
+        <p>A flexible, scalable foundation supporting diverse deployment needs</p>
+      </div>
+      <div class="solution-card">
+        <img src="images/Icons/Icon_02 Our Solution_03 Build to Suit.svg" alt="Build to Suit" />
+        <h3>Build to Suit</h3>
+        <p>Accelerate growth with tailored data center solutions</p>
+      </div>
+      <div class="solution-card">
+        <img src="images/Icons/Icon_02 Our Solution_04 Support Services.png" alt="Support Services" />
+        <h3>Support Services</h3>
+        <p>Supported 24/7 by data center services to ensure help is always available</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="investor-affiliate">
+    <div class="investor-section">
+      <div class="investor-content">
+        <img src="images/Company CI/CI_Warburg Pincus.png" alt="Warburg Pincus Logo" class="investor-logo" />
+        <div class="investor-text">
+          <h2>THE INVESTOR</h2>
+          <p>
+            DCC is a portfolio company under the infrastructure arm of Warburg Pincus, a globally recognized investment firm with over $120 billion in assets under management.
+          </p>
+          <p>
+            Warburg Pincus invests on behalf of institutional and individual clients worldwide, with a commitment to fostering long-term, sustainable value creation.
+          </p>
+          <a href="#" class="learn-more">
+            <img src="images/Button/Button_Learn More 01.png" alt="Arrow" /> Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="affiliate-section">
+      <div class="affiliate-content">
+        <div class="affiliate-text">
+          <h2>AFFILIATE</h2>
+          <p>
+            NFD is an engineering firm specializing in end-to-end support for data center projects, backed by a team of experienced engineers.
+          </p>
+          <p>
+            They provide comprehensive management services across project management, leasing, design, and operations to keep projects on track and running smoothly.
+          </p>
+          <a href="#" class="learn-more">
+            Learn More <img src="images/Button/Button_Learn More 02.png" alt="Arrow" />
+          </a>
+        </div>
+        <img src="images/Company CI/CI_NFD.png" alt="NFD Logo" class="affiliate-logo" />
+      </div>
+    </div>
+  </section>
+  <footer style="background-color: #1e3354; color: white; padding: 60px 20px;">
+    <div style="max-width: 1440px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
+      <div style="flex: 1 1 240px;">
+        <h3 style="color: #00c3ff; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; font-size: 1.5rem;">CONNECT</h3>
+        <p style="margin-bottom: 8px; font-size: 1.3rem;">484 Gangnam-daero, Gangnam-gu, Seoul, South Korea</p>
+        <p style="margin-bottom: 16px; font-size: 1.3rem;"><a href="mailto:Connects@dcconnects.com" style="color: #aef;">Connects@dcconnects.com</a></p>
+        <div style="display: flex; gap: 30px;">
+          <img src="images/Company CI/LinkedIn Png.png" alt="LinkedIn" style="height: 48px;" />
+          <img src="images/Company CI/DCC CI Full_Main Color.png" alt="DCC Logo" style="height: 48px;" />
+        </div>
+      </div>
+      <!-- Menu blocks moved below logo section -->
+    </div>
+    <div style="max-width: 1440px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 52px;">
+      <div style="flex: 1 1 45%; min-width: 160px;">
+        <h4 style="color: #00c3ff; letter-spacing: 2px; margin-bottom: 12px; font-size: 1.4rem;">SOLUTIONS</h4>
+        <p style="font-size: 1.2rem;">Built for AI</p>
+        <p style="font-size: 1.2rem;">Colocation</p>
+        <p style="font-size: 1.2rem;">Build to suit</p>
+        <p style="font-size: 1.2rem;">Support Services</p>
+      </div>
+      <div style="flex: 1 1 45%; min-width: 160px;">
+        <h4 style="color: #00c3ff; letter-spacing: 2px; margin-bottom: 12px; font-size: 1.4rem;">DATA CENTERS</h4>
+        <p style="font-size: 1.2rem;">Korea</p>
+        <p style="font-size: 1.2rem;">Japan</p>
+        <p style="font-size: 1.2rem;">Taiwan</p>
+      </div>
+      <div style="flex: 1 1 45%; min-width: 160px;">
+        <h4 style="color: #00c3ff; letter-spacing: 2px; margin-bottom: 12px; font-size: 1.4rem;">NEWS</h4>
+        <p style="font-size: 1.2rem;">News</p>
+      </div>
+      <div style="flex: 1 1 45%; min-width: 160px;">
+        <h4 style="color: #00c3ff; letter-spacing: 2px; margin-bottom: 12px; font-size: 1.4rem;">ABOUT US</h4>
+        <p style="font-size: 1.2rem;">About Company</p>
+        <p style="font-size: 1.2rem;">The Investor</p>
+        <p style="font-size: 1.2rem;">Affiliate</p>
+      </div>
+    </div>
+  </footer>
 </body>
 <script>
   /* Base scripts and layout logic for all pages */
   let resizeTimeout;
   let mobileDropdownInitialized = false;
-
+    /* Responsive footer font and image size for under 958px */
   // Move nav inside .header-inner on desktop, outside on mobile
   function adjustNavPosition() {
     const headerInner = document.querySelector('.header-inner');
