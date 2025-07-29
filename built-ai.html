@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC Connects</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* AI Intro Section */
+      .ai-intro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 40px;
+        background-color: #fff;
+      }
+
+      .ai-intro-inner {
+        max-width: 1440px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 10px;
+        flex-direction: row; /* changed from column to row */
+        text-align: left; /* updated to align text properly */
+      }
+
+      .ai-header {
+        font-size: 1.5rem;
+        font-weight: 800;
+        line-height: 1.4;
+        background: linear-gradient(
+          90deg,
+          #005bac 0%,
+          #005bac 10%,
+          #555c27 35%,
+          #eab308 55%,
+          #eab308 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 40px;
+        margin-left: 150px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .ai-image img {
+        max-width: 280px;
+        margin-left: 250px;
+        width: 100%;
+        height: auto;
+        transform: rotate(5deg);
+      }
+
+      .ai-text {
+        max-width: 450px;
+        margin-left: 30px;
+      }
+
+      .ai-text p {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        line-height: 1.7;
+        color: #333;
+      }
+
+      /* AI Power Section */
+      .ai-power-section {
+        background-color: #fff;
+        padding: 30px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .ai-power-hero {
+        background: linear-gradient(to right, #005bac, #eab308);
+        color: #fff;
+        padding: 60px 100px;
+        text-align: right;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      .ai-power-hero h2,
+      .ai-power-hero p {
+        text-align: right !important;
+        margin-left: auto;
+        margin-right: 5px;
+      }
+
+      .ai-power-hero h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1.5;
+        max-width: 700px;
+      }
+
+      .ai-power-hero h2 span {
+        font-weight: 600;
+      }
+
+      .ai-power-hero p {
+        margin-top: 15px;
+        font-size: 1.3rem;
+        font-weight: 200;
+        max-width: 600px;
+      }
+
+      .ai-power-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        align-items: center;
+      }
+
+      .ai-power-block {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .ai-power-block img {
+        width: 200px;
+        flex-shrink: 0;
+      }
+
+      .ai-power-block h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(
+          90deg,
+          #a67c00 0%,
+          #d4a800 30%,
+          #ffe680 60%,
+          #ffdc73 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.4;
+      }
+
+      .ai-power-block h3 span {
+        font-weight: 700;
+      }
+
+      .ai-power-block p {
+        font-size: 1.275rem;
+        line-height: 1.6;
+        margin-top: 10px;
+        color: #444;
+      }
+      .ai-power-text {
+        max-width: 510px;
+      }
+      /* Mobile styles */
+      @media screen and (max-width: 1200px) {
+        .ai-header {
+          font-size: 1.15rem;
+          margin-left: 10px;
+        }
+        .ai-image img {
+          max-width: 200px;
+          margin-left: 50px;
+        }
+        .ai-text {
+          max-width: 400px;
+          margin-left: 5px;
+        }
+        .ai-power-hero {
+          text-align: center;
+          width: 100%;
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+        .ai-power-hero h2 {
+          font-size: 28px;
+          max-width: 100%;
+        }
+        .ai-power-block {
+          flex-direction: column !important;
+          text-align: center;
+        }
+        .ai-power-block.reverse {
+          flex-direction: column !important;
+        }
+        .ai-power-block img {
+          width: 150px;
+          margin-bottom: 20px;
+          order: -1;
+        }
+        .ai-power-hero h2,
+        .ai-power-hero p {
+          text-align: center !important;
+          margin-left: auto;
+          margin-right: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 영역 불러오기 -->
+    <div id="header-include"></div>
+
+    <section id="banner">
+      <div class="banner-inner">
+        <img src="images/BG Image/BG Image_02 Built for AI.png" alt="Banner" />
+        <div class="hero-text">
+          <h1>Built for AI</h1>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-intro">
+      <div class="ai-intro-inner">
+        <div class="ai-header">
+          <h2 class="ai-gradient-text">
+            POWERING AI AT SCALE WITH AGILITY <br />AND ADVANCED COOLING
+          </h2>
+        </div>
+        <div class="ai-image">
+          <img
+            src="images/Other Images/artificial-intelligence-1.png"
+            alt="AI Illustration"
+          />
+        </div>
+        <div class="ai-text">
+          <p>
+            AI is turning bold ideas into real-world impact, but scaling it
+            requires more than vision—you need robust infrastructure, scalable
+            power, and high-performance environments purpose-built for AI.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-power-section">
+      <div class="ai-power-hero">
+        <h2>
+          Powering AI with Resilient,
+          <span>Scalable Infrastructure</span>
+        </h2>
+        <p>
+          Your data center needs a dependable, secure energy supply to keep
+          critical operations running—no matter how demanding your AI workloads
+          become.
+        </p>
+      </div>
+      <div class="ai-power-content">
+        <div class="ai-power-block">
+          <img
+            src="images/Icons/Icon_03 Builf for AI_01 Always On.png"
+            alt="Always On Icon"
+          />
+          <div class="ai-power-text">
+            <h3>
+              Always <span>Reliable,<br />Always On</span>
+            </h3>
+            <p>
+              As digital and AI demands grow, so does the need for
+              energy-intensive data center operations. From powering compute to
+              maintaining cooling, AI at scale requires a robust and continuous
+              energy supply—especially for high-performance models.
+            </p>
+          </div>
+        </div>
+        <div class="ai-power-block">
+          <div class="ai-power-text">
+            <h3><span>Engineered for</span><br />High-Density AI</h3>
+            <p>
+              Meeting AI’s power needs isn’t just about having energy—it’s about
+              having the right infrastructure. Our data centers are
+              purpose-built for high-density workloads, supporting up to 150kW
+              per rack. With resilient design and advanced cooling, we help you
+              maximize compute in a compact footprint.
+            </p>
+          </div>
+          <img
+            src="images/Icons/Icon_03 Builf for AI_02 High Density AI.png"
+            alt="High Density Icon"
+          />
+        </div>
+        <div class="ai-power-block">
+          <img
+            src="images/Icons/Icon_03 Builf for AI_03 Built for Scale.png"
+            alt="Built for Scale Icon"
+          />
+          <div class="ai-power-text">
+            <h3>Built for <span>Scale</span></h3>
+            <p>
+              AI requirements vary—and so do our solutions. From flexible
+              deployments and hybrid cooling to energy-optimized configurations,
+              we enable you to scale AI confidently and efficiently, now and
+              into the future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer 영역 불러오기 -->
+    <style>
+      #footer-include {
+        background-color: #eab308 !important;
+      }
+    </style>
+    <div id="footer-include"></div>
+    <script src="js/include.js"></script>
+  </body>
+  <script>
+    /* Base scripts and layout logic for all pages */
+    let resizeTimeout;
+    let mobileDropdownInitialized = false;
+    /* Responsive footer font and image size for under 958px */
+    // Move nav inside .header-inner on desktop, outside on mobile
+    function adjustNavPosition() {
+      const headerInner = document.querySelector(".header-inner");
+      const nav = document.querySelector("nav");
+      if (!headerInner || !nav) return;
+      if (window.innerWidth > 958) {
+        if (!headerInner.contains(nav)) {
+          headerInner.appendChild(nav);
+        }
+      } else {
+        if (headerInner.contains(nav)) {
+          headerInner.parentNode.parentNode.insertBefore(
+            nav,
+            headerInner.parentNode.nextSibling
+          );
+        }
+      }
+    }
+
+    function enableMobileDropdown() {
+      if (window.innerWidth > 958) {
+        // Remove any existing onclick handlers to avoid conflicts on desktop
+        document.querySelectorAll("nav ul li > a").forEach((link) => {
+          link.onclick = null;
+          link.classList.remove("open");
+          if (link.parentElement) {
+            link.parentElement.classList.remove("open");
+          }
+        });
+        mobileDropdownInitialized = false;
+        return;
+      }
+
+      if (mobileDropdownInitialized) return; // Prevent re-initialization
+
+      const allMenuLinks = document.querySelectorAll("nav ul li > a");
+      allMenuLinks.forEach((link) => {
+        link.onclick = (e) => {
+          const parent = link.parentElement;
+          const isDropdown = parent.classList.contains("dropdown");
+          const isOpen = parent.classList.contains("open");
+
+          // Prevent default only for dropdowns
+          if (isDropdown) {
+            e.preventDefault();
+          }
+
+          // Reset all menu states
+          document.querySelectorAll("nav ul li").forEach((item) => {
+            item.classList.remove("open");
+            const aTag = item.querySelector("a");
+            if (aTag) {
+              aTag.classList.remove("open");
+            }
+          });
+
+          // Toggle dropdown only if it's a dropdown and was not already open
+          if (isDropdown && !isOpen) {
+            parent.classList.add("open");
+            link.classList.add("open");
+          } else if (!isDropdown) {
+            // Close mobile menu if non-dropdown clicked
+            document.body.classList.remove("menu-open");
+          }
+        };
+      });
+      mobileDropdownInitialized = true;
+    }
+
+    function onResize() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        adjustNavPosition();
+        enableMobileDropdown();
+      }, 150);
+    }
+
+    window.addEventListener("load", () => {
+      adjustNavPosition();
+      enableMobileDropdown();
+    });
+
+    window.addEventListener("resize", onResize);
+  </script>
+</html>

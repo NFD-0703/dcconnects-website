@@ -1,0 +1,654 @@
+/* Base styles and layout logic for all pages */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  transition: background-color 0.3s ease;
+}
+header:hover {
+  background-color: #fff;
+}
+.header-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  height: 55px;
+  margin-left: -20px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+nav ul li {
+  position: relative;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.38rem;
+  position: relative;
+}
+nav ul li.dropdown > a {
+  padding-right: 18px;
+  display: inline-block;
+}
+nav ul li.dropdown > a::after {
+  content: ">";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transition: transform 0.3s ease;
+  font-size: 1.25rem;
+}
+nav ul li.open > a::after {
+  transform: translateY(-50%) rotate(-90deg);
+}
+nav ul li > a::before,
+nav ul li.dropdown > a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0075c9;
+  transition: width 0.3s ease;
+}
+nav ul li.dropdown:hover > a::before,
+nav ul li:hover > a::before {
+  width: 100%;
+}
+#banner {
+  position: relative;
+  width: 100%;
+  height: 760px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.banner-inner {
+  position: relative;
+  max-width: 1440px;
+  height: 760px;
+  margin: 0 auto;
+}
+#banner img {
+  z-index: 2;
+  height: 760px;
+  width: 1440px;
+  display: block;
+  margin: auto;
+}
+.hero-text {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-align: right;
+  z-index: 3;
+}
+.hero-text h1 {
+  font-size: 3.375rem;
+  font-weight: 600;
+}
+.hero-text a {
+  color: #fff;
+  background-color: #0075c9;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1.125rem;
+  margin-top: 10px;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  padding-right: 32px;
+}
+.hero-text a::after {
+  content: ">";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+.hero-text a:hover {
+  background-color: #004b8a;
+  transform: translateX(5px);
+}
+.hero-text a:hover::after {
+  transform: translateY(-50%) translateX(10px);
+}
+.content {
+  padding: 40px 0;
+  width: 100%;
+  max-width: clamp(320px, 100vw - 40px, 900px);
+  margin-left: calc((100% - 1440px) / 2 + 20px);
+  margin-right: auto;
+}
+.content h2 {
+  font-size: 2.875rem;
+  color: #001a3d;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.content h2 span {
+  color: #0075c9;
+}
+.gradient-text {
+  background: linear-gradient(to right, #000 2%, #0075c9 98%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.content p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+header:hover nav ul li a {
+  color: #000;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+}
+.core-beliefs {
+  max-width: 1440px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.core-beliefs h2 {
+  font-size: 2.875rem;
+  color: #001a3d;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.core-beliefs p {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+.belief-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.belief-card {
+  background: #e2e8f0;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.belief-card img {
+  height: 68px;
+  margin-bottom: 20px;
+}
+.belief-card h3 {
+  font-size: 1.775rem;
+  color: #001a3d;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.belief-card p {
+  font-size: 1.4rem;
+  color: #555;
+  line-height: 1.6;
+}
+.belief-intro p {
+  font-size: 1.4rem;
+  text-align: left;
+}
+.solutions-section {
+  padding: 60px 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+}
+.solutions-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.section-label {
+  color: #0075c9;
+  font-weight: 600;
+  font-size: 2.125rem;
+  margin-bottom: 10px;
+}
+.solutions-title {
+  font-size: 2.85rem;
+  font-weight: 530;
+  color: #0262cf;
+  margin-bottom: 20px;
+}
+.solutions-description {
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.6;
+}
+.solution-cards {
+  max-width: 1440px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.solution-card {
+  padding: 30px 20px;
+  border-radius: 10px;
+  background: #f7fafd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+.solution-card img {
+  height: 64px;
+  margin: 0 0 20px 0;
+  display: block;
+}
+.solution-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #001a3d;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.solution-card p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: left;
+}
+.investor-affiliate {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+.investor-section {
+  background-image: url("../images/BG\ Image/BG Image_0101 The Invester.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 120px 20px;
+}
+.investor-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 40px;
+}
+.investor-logo {
+  width: 400px;
+  flex-shrink: 0;
+}
+.investor-text {
+  max-width: 60%;
+}
+.investor-text h2,
+.affiliate-text h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.investor-text p,
+.affiliate-text p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 80%;
+}
+.affiliate-section {
+  background: linear-gradient(to right, #d4e9f8 0%, #fff 100%);
+  padding: 120px 20px;
+}
+.affiliate-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 40px;
+}
+.affiliate-text {
+  max-width: 60%;
+  color: #333;
+}
+.affiliate-logo {
+  max-width: 200px;
+  width: 100%;
+  margin-right: auto;
+}
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+}
+.learn-more img {
+  width: 24px;
+  height: auto;
+}
+.footer-title {
+  font-size: 1.4rem;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 958px) {
+  header {
+    background-color: #fff;
+    position: relative;
+  }
+  .hamburger {
+    display: block;
+    color: #000;
+  }
+  nav {
+    display: none;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to bottom, #f5f7fa 0%, #e0e5ec 100%);
+    padding-right: 2px;
+    z-index: 99;
+    color: #000;
+  }
+  body.menu-open nav {
+    display: block;
+    padding: 20px 20px;
+    text-align: right;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 16px;
+  }
+  nav ul li .submenu {
+    position: relative;
+    display: none;
+    background: #fff;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 8px;
+    flex-direction: column;
+    text-align: right;
+    width: 100%;
+  }
+  nav ul li.open .submenu {
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul li:not(.open) .submenu {
+    display: none !important;
+  }
+  nav ul li .submenu a {
+    padding: 10px 0;
+    padding-right: 10px;
+    display: block;
+    color: #000;
+  }
+  nav ul li a {
+    color: #000;
+  }
+  nav ul li.dropdown > a::after {
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+  nav ul li > a::before {
+    width: 0;
+  }
+  nav ul li.open > a::after {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  nav ul li.open > a.open::before {
+    width: 100%;
+  }
+  nav ul li .submenu a::before,
+  nav ul li .submenu a::after {
+    display: none !important;
+    content: none !important;
+  }
+  nav ul li > a::before,
+  nav ul li.open > a.open::before,
+  nav ul li a:hover::before {
+    display: none !important;
+    content: none !important;
+  }
+  #banner {
+    height: auto;
+  }
+  .banner-inner {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+  }
+  #banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  .hero-text {
+    width: 90%;
+    max-width: 380px;
+    padding: 10px 15px;
+    right: 5%;
+    top: 15%;
+    transform: translateY(-50%);
+  }
+  .hero-text h1 {
+    font-size: 5vw;
+  }
+  .hero-text a {
+    font-size: 2.5vw;
+  }
+  .content h2 {
+    font-size: 1.5rem;
+  }
+  .core-beliefs h2 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  .content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .belief-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .belief-card img {
+    height: 58px;
+  }
+  .belief-card p {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+  .belief-card h3 {
+    font-size: 1.475rem;
+    font-weight: 550;
+  }
+  .solutions-title {
+    font-size: 1.5rem;
+  }
+  .solutions-description {
+    font-size: 1rem;
+  }
+  .solution-card h3 {
+    font-size: 1.25rem;
+  }
+  .solution-card p {
+    font-size: 0.95rem;
+  }
+  .solution-card img {
+    height: 52px;
+  }
+  .investor-content,
+  .affiliate-content {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 24px;
+  }
+  .investor-logo {
+    align-self: left;
+    width: 300px;
+  }
+  .affiliate-logo {
+    align-self: left;
+    width: 100px;
+  }
+  .investor-text,
+  .affiliate-text {
+    max-width: 100%;
+  }
+  .investor-text h2,
+  .affiliate-text h2 {
+    font-size: 1.75rem;
+  }
+  .investor-text p,
+  .affiliate-text p {
+    font-size: 1.1rem;
+  }
+  .learn-more {
+    font-size: 1rem;
+  }
+  .learn-more img {
+    width: 18px;
+  }
+  footer {
+    padding: 40px 20px;
+  }
+  footer h3,
+  footer h4 {
+    font-size: 1rem;
+  }
+  footer p {
+    font-size: 0.9rem;
+  }
+  footer img {
+    height: 36px !important;
+  }
+
+  .footer-title {
+    font-size: 1.3rem;
+  }
+  .investor-section,
+  .affiliate-section {
+    padding: 80px 20px;
+  }
+}
+
+/* Dropdown submenu styles - Glassmorphism effect & smooth animation for desktop */
+nav ul li .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 14px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  z-index: 999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  min-width: 240px;
+}
+nav ul li.open .submenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+nav ul li .submenu a {
+  color: #000;
+  font-size: 1.125rem;
+  text-decoration: none;
+  padding: 12px 16px;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+nav ul li .submenu a:hover {
+  color: #0075c9;
+}
+@media screen and (max-width: 1440px) {
+  .content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(16px) brightness(0.9);
+    transform: scale(1.05);
+    z-index: 1;
+    opacity: 0.6;
+  }
+  #banner img {
+    z-index: 2;
+  }
+}
+/* Show submenu on hover for desktop (width >= 959px) */
+@media screen and (min-width: 958px) {
+  nav ul li:hover .submenu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  nav ul li:hover > a::after {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+}
+
+/* Responsive footer menu blocks: flex-wrap on small screens */
+@media screen and (max-width: 958px) {
+  .footer-menus {
+    flex-wrap: wrap !important;
+  }
+}
