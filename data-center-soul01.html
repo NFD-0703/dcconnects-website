@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC Connects</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .location-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        max-width: 100%;
+      }
+
+      .location-image img {
+        width: 100%;
+        height: auto;
+        max-width: 1000px;
+      }
+
+      .key-features-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .feature-block {
+        flex: 1 1 45%;
+        background-color: #ffffff;
+        padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+        border-bottom: 3px solid #0066cc;
+      }
+
+      .feature-block h3 {
+        background-color: #0066cc;
+        color: white;
+        padding: 10px;
+        font-size: 1.3rem;
+      }
+
+      .feature-block ul {
+        list-style: none;
+        padding-left: 5px;
+        margin-top: 10px;
+      }
+
+      .feature-block ul li {
+        margin-bottom: 6px;
+        font-size: 1.1rem;
+      }
+
+      @media screen and (max-width: 958px) {
+        .feature-block {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 영역 불러오기 -->
+    <div id="header-include"></div>
+    <section id="banner">
+      <div class="banner-inner">
+        <img src="images/BG Image/BG Image_0401 Soul 01.png" alt="Banner" />
+        <div class="hero-text">
+          <h1>Soul 01</h1>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>
+        <span class="gradient-text">Location (YongIn, South Korea)</span>
+      </h2>
+      <p>
+        Located in Cheoin-gu, Yongin-si, Gyeonggi-do, South Korea, DCC Soul 1 is
+        strategically positioned near Suwon, Seongnam and Osan, areas with
+        growing demand for data center capacity.
+      </p>
+
+      <div class="location-image">
+        <img
+          src="images/Other Images/Location_Yongin AZ.png"
+          alt="Colocation Icon"
+        />
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>
+        <span class="gradient-text">Key Design Features</span>
+      </h2>
+      <div class="key-features-grid">
+        <div class="feature-block">
+          <h3>Building Overview</h3>
+          <ul>
+            <li>Location: Confidential</li>
+            <li>Buildings: 2</li>
+            <li>Services Type: <strong>Cloud + AI</strong></li>
+            <li>Gross Floor Area: 57,971 sqm</li>
+            <li>Typical Floor Height: 7.2m</li>
+            <li>Loading Docks: 2</li>
+            <li>Cargo Lift(5,000kg): 2 for each building</li>
+            <li>Service Lift(5,000kg): 1 for each building</li>
+            <li>Service Lift(2,100kg): 2 for each building</li>
+            <li>Seismic Design: Level IV (IBC Code)</li>
+          </ul>
+        </div>
+        <div class="feature-block">
+          <h3>Design Power Capacity</h3>
+          <ul>
+            <li>Design PUE (Peak): 1.3</li>
+            <li>IT Capacity (Total): 56MW<br />- 28MW per building</li>
+            <li>
+              IT Capacity (Data Hall): 4.66MW<br />- 6 DHs per building<br />-
+              Total 12 DHs
+            </li>
+          </ul>
+        </div>
+        <div class="feature-block">
+          <h3>Fire Detection & Suppression System</h3>
+          <ul>
+            <li>Smoke Detector + Heat Detector, VESDA</li>
+            <li>Siren + Strobe</li>
+            <li>Pre-action valve sprinkler system</li>
+            <li>2hr fire-rated partitions + 1hr fire-rated doors</li>
+            <li>24x7 centralized fire alarm monitoring</li>
+          </ul>
+        </div>
+        <div class="feature-block">
+          <h3>Power System</h3>
+          <ul>
+            <li>2 diverse 154kV KEPCO power</li>
+            <li>2(N) + 1 utility power supply</li>
+            <li>N + 2 catcher generator with underground fuel tank</li>
+            <li>24hrs of support at full load</li>
+            <li>Designed to UTI Tier III standard</li>
+            <li>Concurrently maintainable</li>
+          </ul>
+        </div>
+        <div class="feature-block">
+          <h3>Connectivity</h3>
+          <ul>
+            <li>Carrier-neutral</li>
+            <li>2 main distribution frame(MDF) rooms</li>
+            <li>4 Meet Me Rooms (2 MMRs in each building)</li>
+            <li>4 diverse fiber point of entry to site</li>
+            <li>
+              Access to multiple carriers, internet service and cloud service
+              providers
+            </li>
+          </ul>
+        </div>
+        <div class="feature-block">
+          <h3>Security</h3>
+          <ul>
+            <li>Perimeter surveillance with video content analytics</li>
+            <li>4 graded security area</li>
+            <li>K4 rated car-crash barrier and bollards</li>
+            <li>24x7 CCTV recording at 1080p resolution</li>
+            <li>24x7 on-site manned guard</li>
+            <li>Contactless card access and biometric access system</li>
+            <li>
+              24x7 controlled site access with 2-factor authentication by
+              pre-authorization
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer 영역 불러오기 -->
+    <div id="footer-include"></div>
+    <script src="js/include.js"></script>
+  </body>
+  <script>
+    /* Base scripts and layout logic for all pages */
+    let resizeTimeout;
+    let mobileDropdownInitialized = false;
+    /* Responsive footer font and image size for under 958px */
+    // Move nav inside .header-inner on desktop, outside on mobile
+    function adjustNavPosition() {
+      const headerInner = document.querySelector(".header-inner");
+      const nav = document.querySelector("nav");
+      if (!headerInner || !nav) return;
+      if (window.innerWidth > 958) {
+        if (!headerInner.contains(nav)) {
+          headerInner.appendChild(nav);
+        }
+      } else {
+        if (headerInner.contains(nav)) {
+          headerInner.parentNode.parentNode.insertBefore(
+            nav,
+            headerInner.parentNode.nextSibling
+          );
+        }
+      }
+    }
+
+    function enableMobileDropdown() {
+      if (window.innerWidth > 958) {
+        // Remove any existing onclick handlers to avoid conflicts on desktop
+        document.querySelectorAll("nav ul li > a").forEach((link) => {
+          link.onclick = null;
+          link.classList.remove("open");
+          if (link.parentElement) {
+            link.parentElement.classList.remove("open");
+          }
+        });
+        mobileDropdownInitialized = false;
+        return;
+      }
+
+      if (mobileDropdownInitialized) return; // Prevent re-initialization
+
+      const allMenuLinks = document.querySelectorAll("nav ul li > a");
+      allMenuLinks.forEach((link) => {
+        link.onclick = (e) => {
+          const parent = link.parentElement;
+          const isDropdown = parent.classList.contains("dropdown");
+          const isOpen = parent.classList.contains("open");
+
+          // Prevent default only for dropdowns
+          if (isDropdown) {
+            e.preventDefault();
+          }
+
+          // Reset all menu states
+          document.querySelectorAll("nav ul li").forEach((item) => {
+            item.classList.remove("open");
+            const aTag = item.querySelector("a");
+            if (aTag) {
+              aTag.classList.remove("open");
+            }
+          });
+
+          // Toggle dropdown only if it's a dropdown and was not already open
+          if (isDropdown && !isOpen) {
+            parent.classList.add("open");
+            link.classList.add("open");
+          } else if (!isDropdown) {
+            // Close mobile menu if non-dropdown clicked
+            document.body.classList.remove("menu-open");
+          }
+        };
+      });
+      mobileDropdownInitialized = true;
+    }
+
+    function onResize() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        adjustNavPosition();
+        enableMobileDropdown();
+      }, 150);
+    }
+
+    window.addEventListener("load", () => {
+      adjustNavPosition();
+      enableMobileDropdown();
+    });
+
+    window.addEventListener("resize", onResize);
+  </script>
+</html>
