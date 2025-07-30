@@ -73,7 +73,8 @@
       }
 
       /* AI Power Section */
-      .ai-power-section {
+      .ai-power-section,
+      .ai-cooling-section {
         background-color: #fff;
         padding: 30px;
         font-family: "Poppins", sans-serif;
@@ -112,6 +113,38 @@
         max-width: 600px;
       }
 
+      .ai-cooling-hero {
+        background: linear-gradient(to right, #eab308, #005bac);
+        color: #fff;
+        padding: 60px 100px;
+        text-align: left;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      .ai-cooling-hero h2,
+      .ai-cooling-hero p {
+        text-align: left !important;
+        margin-left: auto;
+        margin-right: 5px;
+      }
+
+      .ai-cooling-hero h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .ai-cooling-hero h2 span {
+        font-weight: 600;
+      }
+
+      .ai-cooling-hero p {
+        margin-top: 15px;
+        font-size: 1.3rem;
+        font-weight: 200;
+      }
+
       .ai-power-content {
         display: flex;
         flex-direction: column;
@@ -128,6 +161,10 @@
         display: flex;
         align-items: center;
         gap: 40px;
+      }
+
+      .ai-power-block.reverse {
+        flex-direction: row-reverse;
       }
 
       .ai-power-block img {
@@ -165,6 +202,73 @@
       .ai-power-text {
         max-width: 510px;
       }
+
+      .ai-cooling-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        align-items: center;
+      }
+
+      .ai-cooling-block {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .ai-cooling-block.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .ai-cooling-block img {
+        width: 250px;
+        flex-shrink: 0;
+      }
+
+      .ai-cooling-block h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(
+          90deg,
+          #a67c00 0%,
+          #d4a800 30%,
+          #ffe680 60%,
+          #ffdc73 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.4;
+      }
+
+      .ai-cooling-block h3 span {
+        font-weight: 700;
+      }
+
+      .ai-cooling-block p {
+        font-size: 1.275rem;
+        line-height: 1.6;
+        margin-top: 10px;
+        color: #444;
+      }
+      .ai-cooling-text {
+        max-width: 850px;
+      }
+      .ai-cooling-text-other {
+        max-width: 550px;
+      }
+
+      .ai-cooling-content .ai-cooling-block:nth-child(3),
+      .ai-cooling-content .ai-cooling-block:nth-child(6) {
+        margin-top: 50px;
+      }
+
       /* Mobile styles */
       @media screen and (max-width: 1200px) {
         .ai-header {
@@ -179,12 +283,14 @@
           max-width: 400px;
           margin-left: 5px;
         }
+
         .ai-power-hero {
           text-align: center;
           width: 100%;
           padding-left: 40px;
           padding-right: 40px;
         }
+
         .ai-power-hero h2 {
           font-size: 28px;
           max-width: 100%;
@@ -206,6 +312,36 @@
           text-align: center !important;
           margin-left: auto;
           margin-right: 5px;
+        }
+
+        .ai-cooling-hero {
+          text-align: center;
+          width: 100%;
+          padding: 60px 40px;
+        }
+
+        .ai-cooling-hero h2 {
+          font-size: 28px;
+          max-width: 100%;
+        }
+
+        .ai-cooling-hero h2,
+        .ai-cooling-hero p {
+          text-align: center !important;
+          margin-left: auto;
+          margin-right: 5px;
+        }
+        .ai-cooling-block {
+          flex-direction: column !important;
+          text-align: center;
+        }
+        .ai-cooling-block.reverse {
+          flex-direction: column !important;
+        }
+        .ai-cooling-block img {
+          width: 200px;
+          margin-bottom: 20px;
+          order: -1;
         }
       }
     </style>
@@ -277,7 +413,11 @@
             </p>
           </div>
         </div>
-        <div class="ai-power-block">
+        <div class="ai-power-block reverse">
+          <img
+            src="images/Icons/Icon_03 Builf for AI_02 High Density AI.png"
+            alt="High Density Icon"
+          />
           <div class="ai-power-text">
             <h3><span>Engineered for</span><br />High-Density AI</h3>
             <p>
@@ -288,10 +428,6 @@
               maximize compute in a compact footprint.
             </p>
           </div>
-          <img
-            src="images/Icons/Icon_03 Builf for AI_02 High Density AI.png"
-            alt="High Density Icon"
-          />
         </div>
         <div class="ai-power-block">
           <img
@@ -310,13 +446,231 @@
         </div>
       </div>
     </section>
+
+    <section class="ai-cooling-section">
+      <div class="ai-cooling-hero">
+        <h2>
+          High-Performance Cooling<br />
+          <span>for AI at Scale</span>
+        </h2>
+        <p>
+          Stay resilient and reliable with advanced<br />
+          cooling solutions engineered for demanding<br />
+          AI environments
+        </p>
+      </div>
+      <div class="ai-cooling-content">
+        <div class="ai-cooling-block">
+          <div class="ai-cooling-text">
+            <h3>AI-Ready. Efficient. Always Cool.</h3>
+            <p>
+              Scaling AI requires more than compute power—it needs thermal
+              control. Our intelligent cooling systems are built for consistency
+              and performance, ensuring your infrastructure stays efficient and
+              reliable under pressure.
+            </p>
+          </div>
+        </div>
+        <div class="ai-cooling-block reverse">
+          <div class="ai-cooling-text">
+            <h3>Cooling Tailored to AI Workloads</h3>
+            <p>
+              AI workloads vary—and so do their thermal needs. We offer hybrid
+              cooling options that blend air and liquid technologies, allowing
+              you to customize based on density, environment, and efficiency
+              goals.
+            </p>
+          </div>
+        </div>
+        <div class="ai-cooling-block">
+          <img
+            src="images/Icons/Icon_03 Builf for AI_04 Direct Cooling.png"
+            alt="Direct Cooling Icon"
+          />
+          <div class="ai-cooling-text-other">
+            <h3>Direct-to-Chip <span>Liquid Cooling</span></h3>
+            <p>
+              Delivers coolant directly to CPU/GPU cold plates, enabling
+              efficient, space-saving heat removal—ideal for high-performance AI
+              while lowering energy use.
+            </p>
+          </div>
+        </div>
+        <div class="ai-cooling-block">
+          <div class="ai-cooling-text-other">
+            <h3><span>Air-Cooled Aisles</span></h3>
+            <p>
+              Optimized airflow targets high-heat zones, offering reliable
+              cooling for dense deployments while cutting energy costs.
+            </p>
+          </div>
+          <img
+            src="images/Icons/Icon_03 Builf for AI_05 Cold Aisle.png"
+            alt="Air-Cooled Aisles Icon"
+          />
+        </div>
+        <div class="ai-cooling-block">
+          <img
+            src="images/Icons/Icon_03 Builf for AI_06 Heat Exchanger.png"
+            alt="Heat Exchanger Icon"
+          />
+          <div class="ai-cooling-text-other">
+            <h3><span>Heat Exchanger</span></h3>
+            <p>
+              Integrated into rack doors, these systems absorb heat directly
+              from equipment, maintaining optimal temperatures and extending
+              hardware life.
+            </p>
+          </div>
+        </div>
+        <div class="ai-cooling-block">
+          <div class="ai-cooling-text">
+            <h3>Performance Meets Flexibility.</h3>
+            <p>
+              Whether you’re deploying high-density racks or scaling across
+              sites, our modular cooling solutions deliver the right balance of
+              power, efficiency, and control to support your evolving AI needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="gold-logo-section">
+      <img
+        src="images/Company CI/DCC CI Full_Golden for AI.png"
+        alt="DCC Golden Logo"
+      />
+    </div>
+    <footer
+      class="site-footer"
+      style="background: linear-gradient(to right, #b48c00, #ffd700); color: white; padding: 60px 20px"
+    >
+      <div
+        style="
+          max-width: 1440px;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+        "
+      >
+        <div style="flex: 1 1 240px">
+          <h3
+            style="
+              color: #000;
+              font-weight: 700;
+              letter-spacing: 2px;
+              margin-bottom: 10px;
+              font-size: 1.4rem;
+            "
+          >
+            CONNECT
+          </h3>
+          <p style="margin-bottom: 8px; font-size: 1.2rem">
+            484 Gangnam-daero, Gangnam-gu, Seoul, South Korea
+          </p>
+          <p style="margin-bottom: 16px; font-size: 1.2rem">
+            <a href="mailto:Connects@dcconnects.com" style="color: #aef"
+              >Connects@dcconnects.com</a
+            >
+          </p>
+          <div style="display: flex; gap: 30px">
+            <img
+              src="images/Company CI/LinkedIn Gray Png.png"
+              alt="LinkedIn"
+              style="height: 48px"
+            />
+            <img
+              src="images/Company CI/DCC CI Full_Monochrome Reverse.png"
+              alt="DCC Logo"
+              style="height: 48px"
+            />
+          </div>
+        </div>
+        <!-- Menu blocks moved below logo section -->
+      </div>
+      <div
+        class="footer-menus"
+        style="
+          max-width: 1440px;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          gap: 10px;
+          margin-top: 52px;
+        "
+      >
+        <div style="flex: 1 1 45%; min-width: 160px">
+          <h4
+            class="footer-title"
+            style="color: #000; letter-spacing: 2px; margin-bottom: 12px"
+          >
+            SOLUTIONS
+          </h4>
+          <p style="font-size: 1.2rem">Built for AI</p>
+          <p style="font-size: 1.2rem">Colocation</p>
+          <p style="font-size: 1.2rem">Build to suit</p>
+          <p style="font-size: 1.2rem">Support Services</p>
+        </div>
+        <div style="flex: 1 1 45%; min-width: 160px">
+          <h4
+            class="footer-title"
+            style="color: #000; letter-spacing: 2px; margin-bottom: 12px"
+          >
+            DATA CENTERS
+          </h4>
+          <p style="font-size: 1.2rem">Korea</p>
+          <p style="font-size: 1.2rem">Japan</p>
+          <p style="font-size: 1.2rem">Taiwan</p>
+        </div>
+        <div style="flex: 1 1 45%; min-width: 160px">
+          <h4
+            class="footer-title"
+            style="color: #000; letter-spacing: 2px; margin-bottom: 12px"
+          >
+            NEWS
+          </h4>
+          <p style="font-size: 1.2rem">News</p>
+        </div>
+        <div style="flex: 1 1 45%; min-width: 160px">
+          <h4
+            class="footer-title"
+            style="color: #000; letter-spacing: 2px; margin-bottom: 12px"
+          >
+            ABOUT US
+          </h4>
+          <p style="font-size: 1.2rem">About Company</p>
+          <p style="font-size: 1.2rem">The Investor</p>
+          <p style="font-size: 1.2rem">Affiliate</p>
+        </div>
+      </div>
+    </footer>
     <!-- Footer 영역 불러오기 -->
     <style>
       #footer-include {
         background-color: #eab308 !important;
       }
+      .gold-logo-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+        background-color: #fff;
+      }
+
+      .gold-logo-section img {
+        max-width: 600px;
+        width: 90%;
+        height: auto;
+      }
+
+      @media screen and (max-width: 958px) {
+        .gold-logo-section img {
+          max-width: 90%;
+        }
+      }
     </style>
-    <div id="footer-include"></div>
     <script src="js/include.js"></script>
   </body>
   <script>
