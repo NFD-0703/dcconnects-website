@@ -78,26 +78,58 @@
         flex-wrap: wrap;
         gap: 20px;
         margin-bottom: 30px;
+
       }
       .colocation-card {
         flex: 1 1 30%;
         background-color: #f8f9fa;
         border-radius: 8px;
-        padding: 30px;
+        padding: 20px;
         text-align: center;
       }
       .colocation-card img {
-        width: 60px;
+        width: 8cap;
         margin-bottom: 15px;
       }
       .colocation-card h4 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 700;
         margin-bottom: 10px;
         color: #0056b3;
       }
       .colocation-card p {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
+        color: #333;
+      }
+
+      .colocation-cards-alt {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+
+      }
+      .colocation-card-alt {
+        flex: 1 1 48%;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+      }
+      .colocation-card-alt img {
+        width: 10cap;
+        margin-bottom: 15px;
+      }
+      .colocation-card-alt h4 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #0056b3;
+      }
+      .colocation-card-alt p {
+        font-size: 1.2rem;
         color: #333;
       }
 
@@ -108,6 +140,12 @@
         .colocation-detail p {
           padding-left: 5px;
           padding-right: 5px;
+        }
+        .colocation-card {
+          flex: 1 1 100%;
+        }
+        .colocation-card-alt {
+          flex: 1 1 100%;
         }
       }
     </style>
@@ -216,13 +254,57 @@
           </p>
         </div>
       </div>
-
       <p>
         Every facility is run to rigorous internal standards aligned with global
         best practices for performance, efficiency, and security—combining local
         expertise with our international capabilities.
-      </p>
+      </p>  
+      <div class="colocation-cards-alt">
+        <div class="colocation-card-alt">
+          <img src="images/Icons/Icon_04 Services_05 Rack.png" alt="Rack" />
+          <h4>Rack</h4>
+          <p>
+            Experience unmatched speed, flexibility, and scalability with our colocation
+            solutions—engineered to evolve alongside your business. While we manage the
+            technical complexities, you gain instant access to cutting-edge infrastructure
+            that drives your growth.
+          </p>
+        </div>
+        <div class="colocation-card-alt">
+          <img src="images/Icons/Icon_04 Services_06 Containment.png" alt="Containment" />
+          <h4>Containment</h4>
+          <p>
+            Improve efficiency with a containment solution that separates cold air intake
+            from hot air exhaust. This design boosts energy performance, supports higher
+            equipment density, and minimizes the footprint needed for your computing power.
+          </p>
+        </div>
+        <div class="colocation-card-alt">
+          <img src="images/Icons/Icon_04 Services_07 Suite.png" alt="Suite" />
+          <h4>Suite</h4>
+          <p>
+            Need maximum security and control? Our suite option provides a fully customizable,
+            private environment tailored for large-scale deployments. Physically isolate your
+            infrastructure within the data center and implement dedicated security systems and
+            advanced access protocols.
+          </p>
+        </div>
+        <div class="colocation-card-alt">
+          <img src="images/Icons/Icon_04 Services_08 Cage.png" alt="Cage" />
+          <h4>Cage</h4>
+          <p>
+            For enhanced privacy and protection, opt for a cage setup—an ideal balance of security,
+            flexibility, and cost-efficiency. Choose from a variety of robust metal enclosures and
+            secure access options based on your deployment size and specific requirements.
+          </p>
+        </div>
+      </div>
+
+      
     </section>
+    
+
+
 
     <!-- Footer 영역 불러오기 -->
     <div id="footer-include"></div>
