@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC Connects</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <style></style> -->
+    <style>
+      .center-heading {
+        text-align: center;
+      }
+      .content {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0px 20px;
+      }
+      .content p {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        font-size: 1.2rem;
+      }
+      .data-center-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 960px;
+        margin: 60px auto;
+      }
+
+      .data-center-card {
+        display: flex;
+        background-color: #f1f1f1;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .data-center-card img {
+        width: 30%;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+      }
+
+      .card-content h3 {
+        font-size: 2rem;
+        margin: 0 0 10px;
+        font-weight: 600;
+      }
+
+      .card-content p {
+        font-size: 1.2rem;
+        margin: 4px 0;
+      }
+
+      .card-content a {
+        margin-top: 10px;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .card-content a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 958px) {
+        .data-center-card {
+          flex-direction: column;
+        }
+
+        .data-center-card img,
+        .card-content {
+          width: 100%;
+        }
+      }
+      .read-more-hover {
+        display: inline-block;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.1rem;
+      }
+
+      .read-more-hover:hover {
+        color: #007bff;
+      }
+
+      .read-more-hover:hover .arrow {
+        display: inline-block;
+        transform: translateX(1cm);
+        transition: transform 0.3s ease;
+      }
+
+      .opening-soon-hover {
+        display: inline-block;
+        font-weight: 500;
+        color: #333;
+        transition: color 0.3s ease;
+        cursor: default;
+        font-size: 1.1rem;
+      }
+
+      .opening-soon-hover:hover {
+        color: #007bff;
+      }
+
+      .opening-soon-hover:hover::before {
+        content: "Opening Soon ";
+        color: #007bff;
+      }
+
+      .opening-soon-hover:hover {
+        color: transparent;
+      }
+
+      .soul-03-img-hover:hover + .card-content .soul-03-img {
+        content: url("images/Other Images/Soul 03.jpg");
+      }
+
+      .soul-03-img {
+        transition: content 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 영역 불러오기 -->
+    <div id="header-include"></div>
+    <section id="banner">
+      <div class="banner-inner">
+        <img src="images/BG Image/BG Image_04 Data Centers.png" alt="Banner" />
+        <div class="hero-text">
+          <h1>Data Centers</h1>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2 class="center-heading">
+        <span class="gradient-text" style="text-align: center"
+          >SOUTH KOREA</span
+        >
+      </h2>
+      <p>
+        South Korea is one of the most digitally connected countries in the
+        world, with internet penetration over 97% and mobile internet usage at
+        93.6%. Combined with a tech-forward economy and the highest social media
+        usage in the Asia Pacific, it offers a highly attractive environment for
+        digital business expansion. Its data center market is seeing strong
+        growth, driven by rising demand for cloud services, data-heavy
+        applications, and enhanced cybersecurity. The market is projected to
+        more than quadruple in size by 2029, with participation from both local
+        and global players.
+      </p>
+      <p>
+        Its data center market is seeing strong growth, driven by rising demand
+        for cloud services, data-heavy applications, and enhanced cybersecurity.
+        The market is projected to more than quadruple in size by 2029, with
+        participation from both local and global players.
+      </p>
+      <div class="data-center-cards">
+        <div class="data-center-card">
+          <img src="images/Other Images/Soul 01 Gray.png" alt="DCC Soul 01" />
+          <div class="card-content">
+            <h3>DCC Soul 01</h3>
+            <p>Greater Seoul Area (South-east)</p>
+            <p>56MW, AI + Cloud Services</p>
+            <a href="#" class="read-more-hover"
+              >Read More <span class="arrow">&gt;</span></a
+            >
+          </div>
+        </div>
+
+        <div class="data-center-card">
+          <img src="images/Other Images/Soul 02.png" alt="DCC Soul 02" />
+          <div class="card-content">
+            <h3>DCC Soul 02</h3>
+            <p>Greater Seoul Area (North)</p>
+            <span class="opening-soon-hover">Read More &gt;</span>
+          </div>
+        </div>
+
+        <div class="data-center-card">
+          <img
+            src="images/Other Images/Soul 03 Gray.jpg"
+            alt="DCC Soul 03"
+            class="soul-03-img"
+          />
+          <div class="card-content">
+            <h3>DCC Soul 03</h3>
+            <p>Greater Seoul Area (South)</p>
+            <span class="opening-soon-hover">Read More &gt;</span>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="center-heading">
+        <span class="gradient-text" style="text-align: center">JAPAN</span>
+      </h2>
+      <p>
+        Japan’s data center market is growing rapidly, fueled by rising demand
+        for cloud computing, big data analytics, and scalable, dependable IT
+        infrastructure. As the second-largest market in Asia and third globally,
+        Japan benefits from advanced infrastructure, cutting-edge technology
+        (especially in AI), strategic geography, and strong government backing.
+        Hyperscale developments are especially active in key urban hubs like
+        Greater Tokyo and Osaka.
+      </p>
+      <div class="data-center-cards">
+        <div class="data-center-card">
+          <img src="images/Other Images/JPN01 Gray.jpg" alt="DCC JPN 01" />
+          <div class="card-content">
+            <h3>DCC JPN 01</h3>
+            <p style="margin-bottom: 50px">Tokyo</p>
+            <span class="opening-soon-hover">Read More &gt;</span>
+          </div>
+        </div>
+      </div>
+      <h2 class="center-heading">
+        <span class="gradient-text" style="text-align: center">TAIWAN</span>
+      </h2>
+      <p style="margin-bottom: 30px">
+        Taiwan’s data center market is projected to reach USD 2.94 billion by
+        2030, growing at a CAGR of 8.05%, driven by digitalization, cloud
+        adoption, and 5G expansion. As a global semiconductor leader and tech
+        hub, Taiwan offers a strong foundation for infrastructure growth.
+      </p>
+      <p>
+        The Personal Data Protection Act (PDPA), aligned with GDPR and CBPR,
+        governs data use, while the government pushes sustainability
+        initiatives, targeting net-zero emissions by 2050. With 79% social media
+        penetration and increasing demand for green energy, Taiwan is fostering
+        a robust digital environment. The country has 12 submarine cables, with
+        four more expected by 2027. Major telcos include Chunghwa Telecom,
+        Taiwan Mobile, and Far EasTone. Global cloud providers like AWS,
+        Microsoft, and Google Cloud are actively expanding, with AWS launching
+        the Asia Pacific (Taipei) Region in 2025.
+      </p>
+      <div class="data-center-cards">
+        <div class="data-center-card">
+          <img src="images/Other Images/TWN 01 Gray.jpg" alt="DCC TWN 01" />
+          <div class="card-content">
+            <h3>DCC TWN 01</h3>
+            <p style="margin-bottom: 50px">Yilan Science Park</p>
+            <span class="opening-soon-hover">Read More &gt;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer 영역 불러오기 -->
+    <div id="footer-include"></div>
+    <script src="js/include.js"></script>
+  </body>
+  <script>
+    /* Base scripts and layout logic for all pages */
+    let resizeTimeout;
+    let mobileDropdownInitialized = false;
+    /* Responsive footer font and image size for under 958px */
+    // Move nav inside .header-inner on desktop, outside on mobile
+    function adjustNavPosition() {
+      const headerInner = document.querySelector(".header-inner");
+      const nav = document.querySelector("nav");
+      if (!headerInner || !nav) return;
+      if (window.innerWidth > 958) {
+        if (!headerInner.contains(nav)) {
+          headerInner.appendChild(nav);
+        }
+      } else {
+        if (headerInner.contains(nav)) {
+          headerInner.parentNode.parentNode.insertBefore(
+            nav,
+            headerInner.parentNode.nextSibling
+          );
+        }
+      }
+    }
+
+    function enableMobileDropdown() {
+      if (window.innerWidth > 958) {
+        // Remove any existing onclick handlers to avoid conflicts on desktop
+        document.querySelectorAll("nav ul li > a").forEach((link) => {
+          link.onclick = null;
+          link.classList.remove("open");
+          if (link.parentElement) {
+            link.parentElement.classList.remove("open");
+          }
+        });
+        mobileDropdownInitialized = false;
+        return;
+      }
+
+      if (mobileDropdownInitialized) return; // Prevent re-initialization
+
+      const allMenuLinks = document.querySelectorAll("nav ul li > a");
+      allMenuLinks.forEach((link) => {
+        link.onclick = (e) => {
+          const parent = link.parentElement;
+          const isDropdown = parent.classList.contains("dropdown");
+          const isOpen = parent.classList.contains("open");
+
+          // Prevent default only for dropdowns
+          if (isDropdown) {
+            e.preventDefault();
+          }
+
+          // Reset all menu states
+          document.querySelectorAll("nav ul li").forEach((item) => {
+            item.classList.remove("open");
+            const aTag = item.querySelector("a");
+            if (aTag) {
+              aTag.classList.remove("open");
+            }
+          });
+
+          // Toggle dropdown only if it's a dropdown and was not already open
+          if (isDropdown && !isOpen) {
+            parent.classList.add("open");
+            link.classList.add("open");
+          } else if (!isDropdown) {
+            // Close mobile menu if non-dropdown clicked
+            document.body.classList.remove("menu-open");
+          }
+        };
+      });
+      mobileDropdownInitialized = true;
+    }
+
+    function onResize() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        adjustNavPosition();
+        enableMobileDropdown();
+      }, 150);
+    }
+
+    window.addEventListener("load", () => {
+      adjustNavPosition();
+      enableMobileDropdown();
+    });
+
+    window.addEventListener("resize", onResize);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const soul03Card = document.querySelectorAll(".data-center-card")[2];
+      const soul03Img = soul03Card.querySelector("img");
+      const hoverTrigger = soul03Card.querySelector(".opening-soon-hover");
+
+      hoverTrigger.addEventListener("mouseenter", () => {
+        soul03Img.src = "images/Other Images/Soul 03.jpg";
+      });
+
+      hoverTrigger.addEventListener("mouseleave", () => {
+        soul03Img.src = "images/Other Images/Soul 03 Gray.jpg";
+      });
+
+      // JPN01 hover logic
+      const jpn01Card = document.querySelectorAll(".data-center-card")[3];
+      const jpn01Img = jpn01Card.querySelector("img");
+      const jpnHoverTrigger = jpn01Card.querySelector(".opening-soon-hover");
+
+      jpnHoverTrigger.addEventListener("mouseenter", () => {
+        jpn01Img.src = "images/Other Images/JPN01.jpg";
+      });
+
+      jpnHoverTrigger.addEventListener("mouseleave", () => {
+        jpn01Img.src = "images/Other Images/JPN01 Gray.jpg";
+      });
+
+      // TWN01 hover logic
+      const twn01Card = document.querySelectorAll(".data-center-card")[4];
+      const twn01Img = twn01Card.querySelector("img");
+      const twnHoverTrigger = twn01Card.querySelector(".opening-soon-hover");
+
+      twnHoverTrigger.addEventListener("mouseenter", () => {
+        twn01Img.src = "images/Other Images/TWN 01.jpg";
+      });
+
+      twnHoverTrigger.addEventListener("mouseleave", () => {
+        twn01Img.src = "images/Other Images/TWN 01 Gray.jpg";
+      });
+    });
+  </script>
+</html>
