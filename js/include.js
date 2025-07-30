@@ -18,5 +18,3 @@ window.addEventListener("DOMContentLoaded", () => {
 
   loadHTML("#footer-include", "components/footer.html");
 });
-
-
