@@ -1,4 +1,8 @@
 /* Base styles and layout logic for all pages */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -276,6 +280,15 @@ header:hover nav ul li a {
   background: #f7fafd;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f0f4ff;
 }
 .solution-card img {
   height: 64px;
