@@ -413,6 +413,15 @@ header:hover nav ul li a {
     flex-direction: column;
     gap: 16px;
   }
+
+  nav ul .submenu {
+    display: none;
+  }
+
+  nav ul .dropdown.open .submenu {
+    display: block;
+  }
+  
   nav ul li .submenu {
     position: relative;
     display: none;
