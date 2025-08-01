@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC Connects</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+    .news-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .news-card {
+      background-color: #f7f7f7;
+      width: calc(50% - 20px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 20px;
+    }
+
+    .news-category {
+      color: #0074d9;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .news-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .news-date {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .news-card {
+        width: 100%;
+      }
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header 영역 불러오기 -->
+    <div id="header-include"></div>
+
+    <section id="banner">
+      <div class="banner-inner">
+        <img src="images/BG Image/BG Image_05 News.png" alt="Banner" />
+        <div class="hero-text">
+          <h1>News</h1>
+          <a href="#">Get the latest updates from DCC</a>
+        </div>
+      </div>
+    </section>
+    <section id="news-cards" class="news-cards">
+      <div class="news-card">
+        <img src="images/Other Images/News 01.png" alt="LinkedIn News" />
+        <div class="news-content">
+          <p class="news-category">NEWS</p>
+          <h3>DC Connects Opens Official LinkedIn Page to Share Insights, Updates, and Build Community Connections.</h3>
+          <p class="news-date">Jul 25, 2025</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="images/Company CI/07 Our Work 01.webp" alt="Construction News" />
+        <div class="news-content">
+          <p class="news-category">NEWS</p>
+          <h3>DC Connects Secures Construction Permit for First Data Center Project ‘Soul 01’ in Yongin, South Korea, with 56MW IT Capacity.</h3>
+          <p class="news-date">Aug 01, 2025</p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer 영역 불러오기 -->
+    <div id="footer-include"></div>
+    <script src="js/include.js"></script>
+  </body>
+  <script>
+    /* Base scripts and layout logic for all pages */
+    let resizeTimeout;
+    let mobileDropdownInitialized = false;
+    /* Responsive footer font and image size for under 958px */
+    // Move nav inside .header-inner on desktop, outside on mobile
+    function adjustNavPosition() {
+      const headerInner = document.querySelector(".header-inner");
+      const nav = document.querySelector("nav");
+      if (!headerInner || !nav) return;
+      if (window.innerWidth > 958) {
+        if (!headerInner.contains(nav)) {
+          headerInner.appendChild(nav);
+        }
+      } else {
+        if (headerInner.contains(nav)) {
+          headerInner.parentNode.parentNode.insertBefore(
+            nav,
+            headerInner.parentNode.nextSibling
+          );
+        }
+      }
+    }
+
+    function enableMobileDropdown() {
+      if (window.innerWidth > 958) {
+        // Remove any existing onclick handlers to avoid conflicts on desktop
+        document.querySelectorAll("nav ul li > a").forEach((link) => {
+          link.onclick = null;
+          link.classList.remove("open");
+          if (link.parentElement) {
+            link.parentElement.classList.remove("open");
+          }
+        });
+        mobileDropdownInitialized = false;
+        return;
+      }
+
+      if (mobileDropdownInitialized) return; // Prevent re-initialization
+
+      const allMenuLinks = document.querySelectorAll("nav ul li > a");
+      allMenuLinks.forEach((link) => {
+        link.onclick = (e) => {
+          const parent = link.parentElement;
+          const isDropdown = parent.classList.contains("dropdown");
+          const isOpen = parent.classList.contains("open");
+
+          // Prevent default only for dropdowns
+          if (isDropdown) {
+            e.preventDefault();
+          }
+
+          // Reset all menu states
+          document.querySelectorAll("nav ul li").forEach((item) => {
+            item.classList.remove("open");
+            const aTag = item.querySelector("a");
+            if (aTag) {
+              aTag.classList.remove("open");
+            }
+          });
+
+          // Toggle dropdown only if it's a dropdown and was not already open
+          if (isDropdown && !isOpen) {
+            parent.classList.add("open");
+            link.classList.add("open");
+          } else if (!isDropdown) {
+            // Close mobile menu if non-dropdown clicked
+            document.body.classList.remove("menu-open");
+          }
+        };
+      });
+      mobileDropdownInitialized = true;
+    }
+
+    function onResize() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        adjustNavPosition();
+        enableMobileDropdown();
+      }, 150);
+    }
+
+    window.addEventListener("load", () => {
+      adjustNavPosition();
+      enableMobileDropdown();
+    });
+
+    window.addEventListener("resize", onResize);
+  </script>
+
+
+
+  </body>
+</html>
