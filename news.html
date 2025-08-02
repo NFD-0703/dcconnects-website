@@ -26,6 +26,9 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       display: flex;
       flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      text-decoration: none;
+      color: inherit;
     }
 
     .news-card img {
@@ -60,10 +63,16 @@
       text-align: right;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 958px) {
       .news-card {
         width: 100%;
       }
+    }
+    .news-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0, 116, 217, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      filter: brightness(1.05);
     }
     </style>
   </head>
@@ -82,22 +91,22 @@
       </div>
     </section>
     <section id="news-cards" class="news-cards">
-      <div class="news-card">
+      <a class="news-card" href="new-detail.html">
         <img src="images/Other Images/News 01.png" alt="LinkedIn News" />
         <div class="news-content">
           <p class="news-category">NEWS</p>
           <h3>DC Connects Opens Official LinkedIn Page to Share Insights, Updates, and Build Community Connections.</h3>
           <p class="news-date">Jul 25, 2025</p>
         </div>
-      </div>
-      <div class="news-card">
+      </a>
+      <a class="news-card" href="new-detail.html">
         <img src="images/Company CI/07 Our Work 01.webp" alt="Construction News" />
         <div class="news-content">
           <p class="news-category">NEWS</p>
           <h3>DC Connects Secures Construction Permit for First Data Center Project ‘Soul 01’ in Yongin, South Korea, with 56MW IT Capacity.</h3>
           <p class="news-date">Aug 01, 2025</p>
         </div>
-      </div>
+      </a>
     </section>
     <!-- Footer 영역 불러오기 -->
     <div id="footer-include"></div>
