@@ -479,12 +479,12 @@ header:hover nav ul li a {
   .banner-inner {
     position: relative;
     width: 100vw;
-    height: auto;
+    height: 350px;
     overflow: hidden;
   }
   #banner img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: cover;
   }
@@ -493,14 +493,14 @@ header:hover nav ul li a {
     max-width: 380px;
     padding: 10px 15px;
     right: 5%;
-    top: 15%;
+    top: 18%;
     transform: translateY(-50%);
   }
   .hero-text h1 {
-    font-size: 5vw;
+    font-size: 6.8vw;
   }
   .hero-text a {
-    font-size: 2.5vw;
+    font-size: 4vw;
   }
   .content h2 {
     font-size: 2rem;
