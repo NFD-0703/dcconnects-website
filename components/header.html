@@ -17,7 +17,11 @@
 <nav>
   <ul>
     <li class="dropdown">
-      <a href="index.html">About Us</a>
+      <a
+        href="index.html"
+        onclick="if(window.innerWidth &lt; 958){ event.preventDefault(); this.parentElement.classList.toggle('open'); }"
+        >About Us</a
+      >
       <ul class="submenu">
         <li><a href="index.html#company">About Company</a></li>
         <li><a href="index.html#investor-section">The Investor</a></li>
@@ -26,7 +30,11 @@
     </li>
     <li><a href="built-ai.html">Built for AI</a></li>
     <li class="dropdown">
-      <a href="services.html">Services</a>
+      <a
+        href="services.html"
+        onclick="if(window.innerWidth &lt; 958){ event.preventDefault(); this.parentElement.classList.toggle('open'); }"
+        >Services</a
+      >
       <ul class="submenu">
         <li><a href="services.html#colocation-hero">Colocation</a></li>
         <li><a href="services.html#build-to-suit">Build to Suit</a></li>
@@ -34,7 +42,11 @@
       </ul>
     </li>
     <li class="dropdown">
-      <a href="data-center.html">Data Centers</a>
+      <a
+        href="data-center.html"
+        onclick="if(window.innerWidth &lt; 958){ event.preventDefault(); this.parentElement.classList.toggle('open'); }"
+        >Data Centers</a
+      >
       <ul class="submenu">
         <li><a href="data-center.html#south-korea">Korea</a></li>
         <li><a href="data-center.html#japan">Japan</a></li>
