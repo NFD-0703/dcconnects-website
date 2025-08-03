@@ -10,265 +10,368 @@
       rel="stylesheet"
     />
     <style>
-    .news-detail-section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-    }
-    .news-detail-header {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-    .news-date-box {
-      background: #0071ce;
-      color: white;
-      text-align: center;
-      padding: 20px 24px;
-      display: inline-block;
-      margin: 100px auto 0;
-    }
-
-    @media (min-width: 959px) {
-      .news-date-box {
-        position: relative;
-        left: 50%;
-        transform: translateX(360px); /* 1440px/2 - box width/2 */
+      .news-detail-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
       }
-    }
 
-    @media (max-width: 958px) {
-      .news-date-box {
-        display: block;
-        margin: 10px auto 0;
-        transform: none;
-        left: auto;
+      .news-detail-header {
+        text-align: left;
+        margin-bottom: 20px;
       }
-    }
-    .news-date-box .date-month {
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .news-date-box .date-day {
-      font-size: 36px;
-      font-weight: bold;
-    }
-    .news-date-box .date-year {
-      font-size: 16px;
-    }
-    .news-type {
-      color: #0071ce;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    .news-title {
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 5px;
-    }
-    .news-detail-meta {
-      display: flex;
-      justify-content: space-between;
-      margin: 50px 0;
-    }
-    .news-meta-left,
-    .news-meta-right {
-      height: 32px;
-    }
-    .news-detail-body p {
-      margin-bottom: 16px;
-    }
-    .news-detail-body a {
-      color: #0071ce;
-      text-decoration: underline;
-    }
-@media (min-width: 959px) {
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 40px;
-    gap: 20px; /* reduce gap between logo and nav */
-  }
-  nav {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: static !important;
-    transform: none !important;
-    margin-left: 0; /* remove unnecessary left margin if exists */
-  }
-}
-    nav ul {
-      display: flex !important;
-      gap: 24px;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-    nav ul li a {
-      display: block;
-      padding: 10px 15px;
-      font-weight: 500;
-      color: black;
-      text-decoration: none;
-    }
-    nav ul li a:hover {
-      color: #0071ce;
-    }
+
+      .news-date-box {
+        background: #0071ce;
+        color: white;
+        text-align: center;
+        padding: 20px 24px;
+        display: inline-block;
+        margin: 100px auto 0;
+      }
+
+      .news-date-box .date-month {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .news-date-box .date-day {
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+      .news-date-box .date-year {
+        font-size: 16px;
+      }
+
+      .news-type {
+        color: #0071ce;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .news-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      .news-detail-meta {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 0;
+      }
+
+      .news-meta-left,
+      .news-meta-right {
+        height: 32px;
+      }
+
+      .news-detail-body p {
+        margin-bottom: 16px;
+      }
+
+      .news-detail-body a {
+        color: #0071ce;
+        text-decoration: underline;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
+      @media (min-width: 959px) {
+        .news-date-box {
+          position: relative;
+          left: 50%;
+          transform: translateX(360px);
+        }
+
+        .header-inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 1440px;
+          margin: 0 auto;
+          padding: 0 40px;
+          gap: 20px;
+        }
+
+        nav {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: static !important;
+          transform: none !important;
+          margin-left: 0;
+        }
+
+        nav ul {
+          display: flex !important;
+          gap: 24px;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+
+        nav ul li a {
+          display: block;
+          padding: 10px 15px;
+          font-weight: 500;
+          color: black;
+          text-decoration: none;
+        }
+
+        nav ul li a:hover {
+          color: #0071ce;
+        }
+        .hidden {
+          display: none;
+        }
+      }
+
+      @media (max-width: 958px) {
+        .news-date-box {
+          display: block;
+          margin: 10px auto 0;
+          transform: none;
+          left: auto;
+        }
+      }
     </style>
   </head>
 
   <body>
     <!-- Header 영역 불러오기 -->
     <div id="header-include"></div>
-    
+
     <div class="news-date-box">
-      <div class="date-month">AUG</div>
-      <div class="date-day">01</div>
-      <div class="date-year">2025</div>
+      <div id="date-month" class="date-month"></div>
+      <div id="date-day" class="date-day"></div>
+      <div id="date-year" class="date-year"></div>
     </div>
-    
+
     <!-- News Detail Section -->
     <section class="news-detail-section">
       <div class="news-detail-wrapper">
         <div class="news-detail-header">
           <div class="news-type">NEWS</div>
-          <h2 class="news-title">
-            DC Connects Secures Construction Permit for First Data Center Project ‘Soul 01’ in Yongin, South Korea, with 56MW IT Capacity
-          </h2>
+          <h2 id="news-title" class="news-title"></h2>
         </div>
 
         <div class="news-detail-meta">
-          <img src="images/Company CI/DCC CI Full_Main Color.png" alt="DCC Connects" class="news-meta-left" />
-          <img src="images/Company CI/LinkedIn Png.png" alt="LinkedIn" class="news-meta-right" />
+          <img
+            src="images/Company CI/DCC CI Full_Main Color.png"
+            alt="DCC Connects"
+            class="news-meta-left"
+          />
+          <img
+            src="images/Company CI/LinkedIn Png.png"
+            alt="LinkedIn"
+            class="news-meta-right"
+          />
         </div>
 
-        <div class="news-detail-body">
-          <p>
-            Yongin, South Korea — DCC has officially permitted construction on its inaugural data center project, Soul 01, located in Cheoin-gu, Yongin, a strategic location just outside of Seoul.
-          </p>
-          <p>
-            The facility is designed to support 56MW of IT load, with two purpose-built buildings delivering 28MW each, and a total gross floor area (GFA) of 57,971 square meters.
-          </p>
-          <p>
-            Positioned to meet the growing demand for cloud and AI infrastructure, Soul 01 marks a major milestone in DCC’s expansion into hyperscale-grade data center development. The project is tailored for high-density workloads, ensuring scalability and efficiency for next-generation computing.
-          </p>
-          <p>
-            Construction is already underway, with full delivery targeted for Q1 2028. The development is expected to serve leading hyperscale, cloud, and enterprise clients looking to expand their presence in the Greater Seoul Metropolitan Area—one of Asia’s most active digital markets.
-          </p>
-          <p>
-            “Our mission is to deliver resilient, future-proof data center solutions that meet the needs of AI and cloud-based innovation,” said a DCC CEO. “Soul 01 is just the beginning.”
-          </p>
-          <p>
-            For more details on this project, please visit:
-            <br />
-            <a href="https://www.dcconnects.com/datacenters/kor/soul01" target="_blank">https://www.dcconnects.com/datacenters/kor/soul01</a>
-          </p>
-        </div>
+        <div id="news-detail-body" class="news-detail-body"></div>
       </div>
     </section>
-        
+
     <!-- Footer 영역 불러오기 -->
     <div id="footer-include"></div>
     <script src="js/include.js"></script>
-  </body>
-  <script>
-    /* Base scripts and layout logic for all pages */
-    let resizeTimeout;
-    let mobileDropdownInitialized = false;
-    /* Responsive footer font and image size for under 958px */
-    // Move nav inside .header-inner on desktop, outside on mobile
-    function adjustNavPosition() {
-      const headerInner = document.querySelector(".header-inner");
-      const nav = document.querySelector("nav");
-      if (!headerInner || !nav) return;
-      if (window.innerWidth > 958) {
-        if (!headerInner.contains(nav)) {
-          headerInner.appendChild(nav);
-        }
-      } else {
-        if (headerInner.contains(nav)) {
-          headerInner.parentNode.parentNode.insertBefore(
-            nav,
-            headerInner.parentNode.nextSibling
-          );
+    <script>
+      /* Base scripts and layout logic for all pages */
+      let resizeTimeout;
+      let mobileDropdownInitialized = false;
+      /* Responsive footer font and image size for under 958px */
+      // Move nav inside .header-inner on desktop, outside on mobile
+      function adjustNavPosition() {
+        const headerInner = document.querySelector(".header-inner");
+        const nav = document.querySelector("nav");
+        if (!headerInner || !nav) return;
+        if (window.innerWidth > 958) {
+          if (!headerInner.contains(nav)) {
+            headerInner.appendChild(nav);
+          }
+        } else {
+          if (headerInner.contains(nav)) {
+            headerInner.parentNode.parentNode.insertBefore(
+              nav,
+              headerInner.parentNode.nextSibling
+            );
+          }
         }
       }
-    }
 
-    function enableMobileDropdown() {
-      if (window.innerWidth > 958) {
-        // Remove any existing onclick handlers to avoid conflicts on desktop
-        document.querySelectorAll("nav ul li > a").forEach((link) => {
-          link.onclick = null;
-          link.classList.remove("open");
-          if (link.parentElement) {
-            link.parentElement.classList.remove("open");
-          }
-        });
-        mobileDropdownInitialized = false;
-        return;
-      }
-
-      if (mobileDropdownInitialized) return; // Prevent re-initialization
-
-      const allMenuLinks = document.querySelectorAll("nav ul li > a");
-      allMenuLinks.forEach((link) => {
-        link.onclick = (e) => {
-          const parent = link.parentElement;
-          const isDropdown = parent.classList.contains("dropdown");
-          const isOpen = parent.classList.contains("open");
-
-          // Prevent default only for dropdowns
-          if (isDropdown) {
-            e.preventDefault();
-          }
-
-          // Reset all menu states
-          document.querySelectorAll("nav ul li").forEach((item) => {
-            item.classList.remove("open");
-            const aTag = item.querySelector("a");
-            if (aTag) {
-              aTag.classList.remove("open");
+      function enableMobileDropdown() {
+        if (window.innerWidth > 958) {
+          // Remove any existing onclick handlers to avoid conflicts on desktop
+          document.querySelectorAll("nav ul li > a").forEach((link) => {
+            link.onclick = null;
+            link.classList.remove("open");
+            if (link.parentElement) {
+              link.parentElement.classList.remove("open");
             }
           });
+          mobileDropdownInitialized = false;
+          return;
+        }
 
-          // Toggle dropdown only if it's a dropdown and was not already open
-          if (isDropdown && !isOpen) {
-            parent.classList.add("open");
-            link.classList.add("open");
-          } else if (!isDropdown) {
-            // Close mobile menu if non-dropdown clicked
-            document.body.classList.remove("menu-open");
-          }
+        if (mobileDropdownInitialized) return; // Prevent re-initialization
+
+        const allMenuLinks = document.querySelectorAll("nav ul li > a");
+        allMenuLinks.forEach((link) => {
+          link.onclick = (e) => {
+            const parent = link.parentElement;
+            const isDropdown = parent.classList.contains("dropdown");
+            const isOpen = parent.classList.contains("open");
+
+            // Prevent default only for dropdowns
+            if (isDropdown) {
+              e.preventDefault();
+            }
+
+            // Reset all menu states
+            document.querySelectorAll("nav ul li").forEach((item) => {
+              item.classList.remove("open");
+              const aTag = item.querySelector("a");
+              if (aTag) {
+                aTag.classList.remove("open");
+              }
+            });
+
+            // Toggle dropdown only if it's a dropdown and was not already open
+            if (isDropdown && !isOpen) {
+              parent.classList.add("open");
+              link.classList.add("open");
+            } else if (!isDropdown) {
+              // Close mobile menu if non-dropdown clicked
+              document.body.classList.remove("menu-open");
+            }
+          };
+        });
+        mobileDropdownInitialized = true;
+      }
+
+      function onResize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          adjustNavPosition();
+          enableMobileDropdown();
+        }, 150);
+      }
+
+      function showNewsDetail(id) {
+        const detailMap = {
+          n1: {
+            title: `DC Connects Opens Official LinkedIn Page to Share Insights, Updates, 
+            and Build Community Connections`,
+            date_year: "2025",
+            date_month: "JUL",
+            date_day: "25",
+            content: `
+                <p>
+                DC Connects is excited to announce the launch of its official LinkedIn page, marking a new chapter in how the company engages with industry professionals, clients, and partners. 
+            </p>
+            <p>
+                This platform will serve as a hub for sharing expert insights, project milestones, and the latest updates from across the data center and infrastructure sectors.
+            </p>
+            <p>
+                As part of its mission to foster transparent communication and community growth, DC Connects invites you to follow its page and become part of the conversation.
+            </p>
+            <p>
+                Whether you’re interested in cutting-edge engineering developments, sustainability in data center design, or updates on key project deployments, the page promises valuable content for all stakeholders. 
+            </p>
+            <p>
+                Follow us at: https://www.linkedin.com/in/dcconnects
+                <br />
+                <a
+                href="https://www.linkedin.com/in/dcconnects"
+                target="_blank"
+                >https://www.linkedin.com/in/dcconnects
+                </a>
+            </p>
+            <p>
+                Stay connected, stay informed, and grow with us.
+                </p>
+            `,
+          },
+          n2: {
+            title: `DC Connects Secures Construction Permit for First Data Center
+            Project ‘Soul 01’ in Yongin, South Korea, with 56MW IT Capacity`,
+            date_year: "2025",
+            date_month: "AUG",
+            date_day: "01",
+            content: `
+                <p>
+                Yongin, South Korea — DCC has officially permitted construction on
+                its inaugural data center project, Soul 01, located in Cheoin-gu,
+                Yongin, a strategic location just outside of Seoul.
+            </p>
+            <p>
+                The facility is designed to support 56MW of IT load, with two
+                purpose-built buildings delivering 28MW each, and a total gross
+                floor area (GFA) of 57,971 square meters.
+            </p>
+            <p>
+                Positioned to meet the growing demand for cloud and AI
+                infrastructure, Soul 01 marks a major milestone in DCC’s expansion
+                into hyperscale-grade data center development. The project is
+                tailored for high-density workloads, ensuring scalability and
+                efficiency for next-generation computing.
+            </p>
+            <p>
+                Construction is already underway, with full delivery targeted for Q1
+                2028. The development is expected to serve leading hyperscale,
+                cloud, and enterprise clients looking to expand their presence in
+                the Greater Seoul Metropolitan Area—one of Asia’s most active
+                digital markets.
+            </p>
+            <p>
+                “Our mission is to deliver resilient, future-proof data center
+                solutions that meet the needs of AI and cloud-based innovation,”
+                said a DCC CEO. “Soul 01 is just the beginning.”
+            </p>
+            <p>
+                For more details on this project, please visit:
+                <br />
+                <a
+                href="https://www.dcconnects.com/datacenters/kor/soul01"
+                target="_blank"
+                >https://www.dcconnects.com/datacenters/kor/soul01
+                </a>
+            </p>
+            `,
+          },
         };
-      });
-      mobileDropdownInitialized = true;
-    }
 
-    function onResize() {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
+        const detail = detailMap[id];
+        if (!detail) return;
+
+        document.querySelector("#news-title").innerText = detail.title;
+        document.querySelector("#date-year").innerText = detail.date_year;
+        document.querySelector("#date-month").innerText = detail.date_month;
+        document.querySelector("#date-day").innerText = detail.date_day;
+        document.querySelector("#news-detail-body").innerHTML = detail.content;
+      }
+
+      window.addEventListener("load", () => {
         adjustNavPosition();
         enableMobileDropdown();
-      }, 150);
-    }
+      });
 
-    window.addEventListener("load", () => {
-      adjustNavPosition();
-      enableMobileDropdown();
-    });
+      window.addEventListener("resize", onResize);
 
-    window.addEventListener("resize", onResize);
-  </script>
-
-
-
+      window.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const newsId = params.get("id"); // 예: 'news1'
+        if (newsId) {
+          showNewsDetail(newsId);
+        }
+      });
+    </script>
   </body>
 </html>
