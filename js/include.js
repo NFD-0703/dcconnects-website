@@ -24,11 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
   function setupHeaderLogoOverlay() {
     // ⛔ new-detail.html, contact.html 에서는 동작 안 함
     const path = window.location.pathname.toLowerCase();
-    if (
-      window.innerWidth <= 1024 ||
-      path.endsWith("new-detail.html") ||
-      path.endsWith("contact.html")
-    ) {
+    if (window.innerWidth <= 1024 || path.endsWith("new-detail.html")) {
       // 이 페이지들에선 상단 로고 이미지만 교체
       const headerInclude = document.getElementById("header-include");
 
