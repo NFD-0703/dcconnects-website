@@ -58,13 +58,61 @@
       }
 
       .feature-block ul li {
-        margin-bottom: 6px;
+        margin-bottom: 12px;
         font-size: 1.1rem;
       }
 
+      /* Building Overview: 2-column key/value grid */
+      .building-overview ul {
+        padding-left: 0;
+        margin: 10px 0 0;
+      }
+      .building-overview ul li {
+        display: grid;
+        grid-template-columns: clamp(160px, 25%, 240px) 1fr; /* fluid label column */
+        column-gap: 40px;
+        align-items: start;
+        padding: 6px 12px;
+        list-style: none;
+        padding-left: 0; /* override hanging indent */
+        text-indent: 0;  /* override hanging indent */
+      }
+      .building-overview .kv-key {
+        font-weight: 500;
+        color: #1a1a1a;
+        white-space: nowrap;
+      }
+      .building-overview .kv-value {
+        color: #333;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+
+      /* Responsive tweak */
       @media screen and (max-width: 958px) {
         .feature-block {
           flex: 1 1 100%;
+        }
+        .building-overview ul li {
+          grid-template-columns: clamp(130px, 35%, 180px) 1fr;
+          padding: 8px 8px;
+          column-gap: 20px;
+        }
+        .feature-block h3 {
+          font-size: 1.15rem;
+        }
+        .building-overview .kv-key {
+          font-weight: 550;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .building-overview ul li {
+          grid-template-columns: 1fr; /* stack */
+          row-gap: 4px;
+        }
+        .building-overview .kv-key {
+          white-space: normal; /* allow wrap when stacked */
         }
       }
     </style>
@@ -105,19 +153,18 @@
         <span class="gradient-text">Key Design Features</span>
       </h2>
       <div class="key-features-grid">
-        <div class="feature-block">
+        <div class="feature-block building-overview">
           <h3>Building Overview</h3>
           <ul>
-            <li>Location: Confidential</li>
-            <li>Buildings: 2</li>
-            <li>Services Type: <strong>Cloud + AI</strong></li>
-            <li>Gross Floor Area: 57,971 sqm</li>
-            <li>Typical Floor Height: 7.2m</li>
-            <li>Loading Docks: 2</li>
-            <li>Cargo Lift(5,000kg): 2 for each building</li>
-            <li>Service Lift(5,000kg): 1 for each building</li>
-            <li>Service Lift(2,100kg): 2 for each building</li>
-            <li>Seismic Design: Level IV (IBC Code)</li>
+            <li><span class="kv-key">Location</span><span class="kv-value">Idong-eup, Youngin-si, Gyeonggi-do, Korea</span></li>
+            <li><span class="kv-key">Buildings</span><span class="kv-value">2</span></li>
+            <li><span class="kv-key">Services Type</span><span class="kv-value"><strong>Cloud + AI</strong></span></li>
+            <li><span class="kv-key">Gross Floor Area</span><span class="kv-value">57,971 sqm</span></li>
+            <li><span class="kv-key">Typical Floor Height</span><span class="kv-value">7.2m</span></li>
+            <li><span class="kv-key">Loading Docks</span><span class="kv-value">2</span></li>
+            <li><span class="kv-key">Cargo Lift (5,000kg)</span><span class="kv-value">2 for each building</span></li>
+            <li><span class="kv-key">Service Lift (5,000kg)</span><span class="kv-value">1 for each building</span></li>
+            <li><span class="kv-key">Service Lift (2,100kg)</span><span class="kv-value">2 for each building</span></li>
           </ul>
         </div>
         <div class="feature-block">
@@ -144,11 +191,13 @@
         <div class="feature-block">
           <h3>Power System</h3>
           <ul>
-            <li>2 diverse 154kV KEPCO power</li>
+            <li>80MW Total Capacity</li>
             <li>2(N) + 1 utility power supply</li>
-            <li>N + 2 catcher generator with underground fuel tank</li>
-            <li>24hrs of support at full load</li>
-            <li>Designed to UTI Tier III standard</li>
+            <li>N + 2 catcher generator equipped with
+            underground fuel tank providing up 24hrs of
+            support at full load
+            </li> 
+            <li>Designed to over UTI Tier III standard</li>
             <li>Concurrently maintainable</li>
           </ul>
         </div>
