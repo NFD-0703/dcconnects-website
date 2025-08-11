@@ -186,7 +186,7 @@
         </div>
 
         <div class="data-center-card">
-          <img src="images/Other Images/Soul 02.png" alt="DCC Soul 02" />
+          <img src="images/Other Images/Soul 02 Gray.png" alt="DCC Soul 02" />
           <div class="card-content">
             <h3>DCC Soul 02</h3>
             <p>Greater Seoul Area (North)</p>
@@ -356,15 +356,39 @@
     window.addEventListener("resize", onResize);
 
     document.addEventListener("DOMContentLoaded", () => {
+      const soul01Card = document.querySelectorAll(".data-center-card")[0];
+      const soul01Img = soul01Card?.querySelector("img");
+      const hoverTrigger01 = soul01Card?.querySelector(".read-more-hover"); // ← 변경!
+      if (soul01Img && hoverTrigger01) {
+        hoverTrigger01.addEventListener("mouseenter", () => {
+          soul01Img.src = "images/Other Images/Soul 01.png";
+        });
+        hoverTrigger01.addEventListener("mouseleave", () => {
+          soul01Img.src = "images/Other Images/Soul 01 Gray.png";
+        });
+      }
+      
+      const soul02Card = document.querySelectorAll(".data-center-card")[1];
+      const soul02Img = soul02Card.querySelector("img");
+      const hoverTrigger02 = soul02Card.querySelector(".opening-soon-hover");
+
+      hoverTrigger02.addEventListener("mouseenter", () => {
+        soul02Img.src = "images/Other Images/Soul 02.png";
+      });
+
+      hoverTrigger02.addEventListener("mouseleave", () => {
+        soul02Img.src = "images/Other Images/Soul 02 Gray.png";
+      });
+
       const soul03Card = document.querySelectorAll(".data-center-card")[2];
       const soul03Img = soul03Card.querySelector("img");
-      const hoverTrigger = soul03Card.querySelector(".opening-soon-hover");
+      const hoverTrigger03 = soul03Card.querySelector(".opening-soon-hover");
 
-      hoverTrigger.addEventListener("mouseenter", () => {
+      hoverTrigger03.addEventListener("mouseenter", () => {
         soul03Img.src = "images/Other Images/Soul 03.jpg";
       });
 
-      hoverTrigger.addEventListener("mouseleave", () => {
+      hoverTrigger03.addEventListener("mouseleave", () => {
         soul03Img.src = "images/Other Images/Soul 03 Gray.jpg";
       });
 
