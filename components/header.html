@@ -7,12 +7,26 @@
       />
     </div>
     <button
+      id="hamburger-btn"
       class="hamburger"
-      onclick="document.body.classList.toggle('menu-open')"
+      onclick="toggleMenuIcon()"
     >
       ☰
     </button>
   </div>
+  <style>
+    #hamburger-btn {
+      font-size: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    #hamburger-btn.open {
+      transform: rotate(90deg);
+    }
+  </style>
 </header>
 <nav>
   <ul>
