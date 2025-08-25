@@ -14,6 +14,21 @@ window.addEventListener("DOMContentLoaded", () => {
     adjustNavPosition?.();
     enableMobileDropdown?.();
     document.body.classList.add("header-loaded");
+
+    window.toggleMenuIcon = function () {
+      const btn = document.getElementById('hamburger-btn');
+      if (btn) {
+        btn.style.fontSize = '32px';
+      }
+      document.body.classList.toggle('menu-open');
+      if (document.body.classList.contains('menu-open')) {
+        btn.textContent = '✕';
+        btn.classList.add('open');
+      } else {
+        btn.textContent = '☰';
+        btn.classList.remove('open');
+      }
+    };
   });
 
   loadHTML("#footer-include", "components/footer.html");
